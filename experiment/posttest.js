@@ -89,60 +89,60 @@
 
 
     const myQuestions = [{
-            question: "1. Sample question1", ///// Write the question inside double quotes
+            question: "1. Traversal of a graph is different from tree because _________.", ///// Write the question inside double quotes
             answers: {
-                a: "1", ///// Write the option 1 inside double quotes
-                b: "2", ///// Write the option 2 inside double quotes
- 		c: "3", ///// Write the option 3 inside double quotes
-                d: "4", ///// Write the option 4 inside double quotes
+                a: "There can be loops in the graph so we must maintain a visited flag for every vertex ", ///// Write the option 1 inside double quotes
+                b: "Depth first travesal of a graph uses queue whereas traversal of tree uses queue", ///// Write the option 2 inside double quotes
+ 		c: "Breadth first traversal of a tree is not possible", ///// Write the option 3 inside double quotes
+                d: "All of the mentioned", ///// Write the option 4 inside double quotes
             },
-            correctAnswer: "c" ///// Write the correct option inside double quotes
+            correctAnswer: "a" ///// Write the correct option inside double quotes
         },
 
     {
-      question: "2.Sample question2",  ///// Write the question inside double quotes
+      question: "2. Breadth First Traversal of a tree can be used for _________.",  ///// Write the question inside double quotes
       answers: {
-        a: "1",                  ///// Write the option 1 inside double quotes
-        b: "2",                  ///// Write the option 2 inside double quotes
-	c: "3", ///// Write the option 3 inside double quotes
-        d: "4", ///// Write the option 4 inside double quotes
+        a: "Finding the shortest distance to every other node from the root in the tree",                  ///// Write the option 1 inside double quotes
+        b: "Finding cycles in the tree ",                  ///// Write the option 2 inside double quotes
+	c: "Finding strongly connected components in the tree", ///// Write the option 3 inside double quotes
+        d: "None of the mentioned", ///// Write the option 4 inside double quotes
               },
       correctAnswer: "a"                ///// Write the correct option inside double quotes
     },
 
 {
-      question: "3. Sample question3",  ///// Write the question inside double quotes
+      question: "3. What is common in three different types of traversals (Inorder, Preorder and Postorder)?",  ///// Write the question inside double quotes
       answers: {
-        a: "1",                  ///// Write the option 1 inside double quotes
-        b: "2",                  ///// Write the option 2 inside double quotes
-	c: "3", ///// Write the option 3 inside double quotes
-        d: "4", ///// Write the option 4 inside double quotes
+        a: "Root is visited after the left subtree",                  ///// Write the option 1 inside double quotes
+        b: "Root is visited before the right subtree",                  ///// Write the option 2 inside double quotes
+	c: "Left subtree is always visited before the right subtree", ///// Write the option 3 inside double quotes
+        d: "All of the above", ///// Write the option 4 inside double quotes
               },
-      correctAnswer: "b"                ///// Write the correct option inside double quotes
+      correctAnswer: "c"                ///// Write the correct option inside double quotes
     },
 
 {
-      question: "4.Sample question3",  ///// Write the question inside double quotes
+      question: "4. A binary tree can be uniquely re-constructed from ________.",  ///// Write the question inside double quotes
       answers: {
-        a: "1",                  ///// Write the option 1 inside double quotes
-        b: "2",                  ///// Write the option 2 inside double quotes
-	c: "3", ///// Write the option 3 inside double quotes
-        d: "4", ///// Write the option 4 inside double quotes
-	e: "5 ", ///// Write the option 5 inside double quotes
+        a: "Inorder and Preorder traversal ",                  ///// Write the option 1 inside double quotes
+        b: "Preorder and Postorder traversal ",                  ///// Write the option 2 inside double quotes
+	c: "Only Inorder traversal ", ///// Write the option 3 inside double quotes
+        d: "Only Post order traversal", ///// Write the option 4 inside double quotes
+	 
               },
       correctAnswer: "a"                ///// Write the correct option inside double quotes
     },
 
 {
-      question: "5. Sample question5",  ///// Write the question inside double quotes
+      question: "5. The inorder and preorder traversal of a binary tree are d b e a f c g and a b d e c f g, respectively. The postorder traversal of the binary tree is _________.",  ///// Write the question inside double quotes
       answers: {
-        a: "1",                  ///// Write the option 1 inside double quotes
-        b: "2",                  ///// Write the option 2 inside double quotes
-	c: "3 ", ///// Write the option 3 inside double quotes
-        d: "4", ///// Write the option 4 inside double quotes
-	e: "5", ///// Write the option 4 inside double quotes
+        a: "e d b g f c a",                  ///// Write the option 1 inside double quotes
+        b: "d e f g b c a ",                  ///// Write the option 2 inside double quotes
+	c: "d e b f g c a ", ///// Write the option 3 inside double quotes
+        d: "d e b f g a c ", ///// Write the option 4 inside double quotes
+	 
               },
-      correctAnswer: "d"                ///// Write the correct option inside double quotes
+      correctAnswer: "c"                ///// Write the correct option inside double quotes
     },
         
     ];

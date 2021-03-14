@@ -89,47 +89,28 @@
 
 
      const myQuestions = [{
-            question: "1. Sample question1", ///// Write the question inside double quotes
+            question: "1. Time Complexity of Breadth First Traversal is ______. (V – number of vertices, E – number of edges) ", ///// Write the question inside double quotes
             answers: {
-                a: "1", ///// Write the option 1 inside double quotes
-                b: "2", ///// Write the option 2 inside double quotes
-                c: "3", ///// Write the option 2 inside double quotes
-                d: "4", ///// Write the option 2 inside double quotes
+                a: "(A) O(V + E) ", ///// Write the option 1 inside double quotes
+                b: "O(V) ", ///// Write the option 2 inside double quotes
+                c: "O(E) ", ///// Write the option 2 inside double quotes
+                d: " None of the mentioned ", ///// Write the option 2 inside double quotes
             },
-            correctAnswer: "b" ///// Write the correct option inside double quotes
+            correctAnswer: "a" ///// Write the correct option inside double quotes
         },
 
     {
-      question: "2. Sample question2",  ///// Write the question inside double quotes
+      question: "2. What is the most appropriate data structure for Breadth First Traversal of a tree?",  ///// Write the question inside double quotes
       answers: {
-        a: "1",                  ///// Write the option 1 inside double quotes
-        b: "2",                  ///// Write the option 2 inside double quotes
-	c: "3", ///// Write the option 3 inside double quotes
-        d: "4", ///// Write the option 4 inside double quotes
+        a: "Linked List  ",                  ///// Write the option 1 inside double quotes
+        b: "Queue",                  ///// Write the option 2 inside double quotes
+	c: "Tree   ",                  ///// Write the option 1 inside double quotes
+        d: " Array ",                  ///// Write the option 2 inside double quotes
+	
              },
-      correctAnswer: "a"                ///// Write the correct option inside double quotes
+      correctAnswer: "b"                ///// Write the correct option inside double quotes
     },
 
-{
-      question: "3. Sample question3",  ///// Write the question inside double quotes
-      answers: {
-        a: "1",                  ///// Write the option 1 inside double quotes
-        b: "2",                  ///// Write the option 2 inside double quotes
-	c: "3", ///// Write the option 3 inside double quotes
-        d: "4", ///// Write the option 4 inside double quotes
-             },
-      correctAnswer: "d"                ///// Write the correct option inside double quotes
-    },
-{
-      question: "4. Sample question4",  ///// Write the question inside double quotes
-      answers: {
-        a: "1",                  ///// Write the option 1 inside double quotes
-        b: "2",                  ///// Write the option 2 inside double quotes
-	c: "3", ///// Write the option 3 inside double quotes
-        d: "4", ///// Write the option 4 inside double quotes
-             },
-      correctAnswer: "c"                ///// Write the correct option inside double quotes
-    },
 
      ];
 

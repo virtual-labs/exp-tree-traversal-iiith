@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Breadth First Traversals</title>
+<link rel="stylesheet" type="text/css" href="../css/commonstyle.css"/>
+<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+<link rel="stylesheet" type="text/css" href="../css/hint_box.css"/>
+ 
+
+<body>
+
+<div class="instruction-box">
+  <button class="collapsible">Instructions</button>
+  <div class="content">
+    <ul>
+      <li>Select the <b>Start</b> button to visualize
+      breadth first traversal.</li>
+      <li>Click <b>Reset</b> after the traversal is
+      complete, before moving on to next traversal.</li>
+      <li>Click <b>Start</b> to start traversal </li>
+    </ul>
+  </div>
+</div>
+
+<div id="tree" style="top:85px;"></div>
+
+<div class="comment-box" id="comment-box-bigger" style="margin:auto;margin-top:26%;height:12vh;">
+  <b>Observations</b>
+  <div id="seq" >
+  <div id="sequencelbl"><b>Node Sequence:</b></div>
+  <div id="traversal"><p></p></div>
+  </div>
+</div> 
+
+<center>
+  <div class="slidecontainer">
+    <p id="speed_adjust">
+      Min. Speed
+      <input id="speed" type="range" min="0" max="4000" class="slider slider_input">
+      Max. Speed
+    </p>
+  </div>
+</center>
+    
+  <div id="button-wrapper" class="buttons" style="top: 4vw !important;">
+        <button id="bft" value="start next" type ="button" class="green" onclick="startNext()" style="visibility: hidden;">Breadth First</button>
+        <button id="startNext" value="start next" type ="button" class="green" onclick="startNext()">Breadth First</button>
+        <button id="reset" value="Reset" type="button" class="green" onclick="reset()">Reset</button>
+        <button id="pause" type="button" value="Pause" class="green"  onclick="pause()">Pause</button>
+        <button id="bft" value="start next" type ="button" class="green" onclick="startNext()" style="visibility: hidden;">Breadth First</button>
+       
+    </div>
+     
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+<script src="js/data.js"></script>
+<script src="js/globalvariables.js"></script>
+<script src="js/traversals.js"></script>
+<script src="js/treeTraversal.js"></script>
+
+</body>
