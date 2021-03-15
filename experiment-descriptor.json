@@ -62,7 +62,7 @@
     {
       "unit-type": "lu",
       "label": "Depth First Traversal",
-      "basedir": "depth-first-traversalt",
+      "basedir": "depth-first-traversal",
       "units": [
         {
           "unit-type": "aim"
