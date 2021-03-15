@@ -1,0 +1,237 @@
+{
+  "unit-type": "lu",
+  "label": "Tree Traversal",
+  "basedir": ".",
+  "units": [
+    {
+      "unit-type": "aim"
+    },
+    {
+      "unit-type": "task",
+      "label": "Overview",
+      "content-type": "video",
+      "source": "overview.md",
+      "target": "overview.html"
+    },
+    {
+      "unit-type": "task",
+      "label": "Pre Test Instructions",
+      "content-type": "assesment",
+      "source": "pre-test.md",
+      "target": "pre-test.html"
+    },
+    {
+      "unit-type": "task",
+      "label": "Pre Test Quiz",
+      "content-type": "assesment",
+      "source": "pretest.js",
+      "target": "pretest.html"
+    },
+    {
+      "unit-type": "lu",
+      "label": "Tree Traversals",
+      "basedir": "tree-traversals",
+      "units": [
+        {
+          "unit-type": "aim"
+        },
+        {
+          "unit-type": "task",
+          "label": "Overview",
+          "content-type": "video",
+          "source": "overview.md",
+          "target": "overview.html"
+        },
+	{
+          "unit-type": "task",
+          "label": "Tree Traversals Basics",
+          "content-type": "video",
+          "source": "tree-traversals-basics.md",
+          "target": "tree-traversals-basics.html"
+        },
+        {
+      "unit-type": "task",
+      "label": "Basics of Traversal Quiz",
+      "content-type": "assesment",
+      "source": "basics-of-traversal-quiz.js",
+      "target": "basics-of-traversal-quiz.html"
+    },
+      
+      ]
+    },
+    {
+      "unit-type": "lu",
+      "label": "Depth First Traversal",
+      "basedir": "depth-first-traversalt",
+      "units": [
+        {
+          "unit-type": "aim"
+        },
+	{
+          "unit-type": "task",
+          "label": "Overview",
+          "content-type": "video",
+          "source": "overview.md",
+          "target": "overview.html"
+        },
+        {
+          "unit-type": "task",
+          "label": "Depth First Traversal Recursive",
+          "content-type": "video",
+          "source": "depth-first-traversal-recursive.md",
+          "target": "depth-first-traversal-recursive.html"
+        },
+        {
+          "unit-type": "task",
+          "label": "Depth First Traversal Iterative",
+          "content-type": "video",
+          "source": "depth-first-traversal-iterative.md",
+          "target": "depth-first-traversal-iterative.html"
+        },
+        {
+          "unit-type": "task",
+          "label": "Depth First Traversal Demo",
+          "content-type": "simulation",
+          "source": "simulation/dft.html",
+          "target": "dft.html"
+        },
+	{
+          "unit-type": "task",
+          "label": "Depth First Traversal Practice",
+          "content-type": "simulation",
+          "source": "simulation/dft-practice.html",
+          "target": "dft-practice.html"
+        },
+	{
+          "unit-type": "task",
+          "label": "Depth First Traversal Exercise",
+          "content-type": "simulation",
+          "source": "simulation/dft-exercise.html",
+          "target": "dft-exercise.html"
+        },
+        {
+         "unit-type": "task",
+         "label": "Depth First Traversal Quiz",
+         "content-type": "assesment",
+         "source": "dfs-traversal-quiz.js",
+         "target": "dfs-traversal-quiz.html"
+       }
+      ]
+    },
+        {
+      "unit-type": "lu",
+      "label": "Reconstructing Binary Tree",
+      "basedir": "reconstructing-binary-tree",
+      "units": [
+        {
+          "unit-type": "aim"
+        },
+	{
+          "unit-type": "task",
+          "label": "Overview",
+          "content-type": "video",
+          "source": "overview.md",
+          "target": "overview.html"
+        },
+        {
+          "unit-type": "task",
+          "label": "From Inorder and Postorder",
+          "content-type": "video",
+          "source": "from-inorder-and-postorder.md",
+          "target": "from-inorder-and-postorder.html"
+        },
+        
+        {
+          "unit-type": "task",
+          "label": "From Inorder and Postorder",
+          "content-type": "video",
+          "source": "from-inorder-and-preorder.md",
+          "target": "from-inorder-and-preorder.html"
+        },
+	
+        {
+          "unit-type": "task",
+          "label": "Tree Construction Quiz",
+          "content-type": "assesment",
+          "source": "tree-construction-quiz-quiz.js",
+          "target": "tree-construction-quiz-quiz.html"
+        }
+      ]
+    },
+    {
+      "unit-type": "lu",
+      "label": "Breadth First Traversal",
+      "basedir": "breadth-first-taversal",
+      "units": [
+        {
+          "unit-type": "aim"
+        },
+	{
+          "unit-type": "task",
+          "label": "Overview",
+          "content-type": "video",
+          "source": "overview.md",
+          "target": "overview.html"
+        },
+        {
+          "unit-type": "task",
+          "label": "Breadth First Traversal Theory",
+          "content-type": "video",
+          "source": "breadth-first-traversal-theory.md",
+          "target": "breadth-first-traversal-theory.html"
+        },
+        
+        {
+          "unit-type": "task",
+          "label": "Breadth First Traversal Demo",
+          "content-type": "simulation",
+          "source": "simulation/bft.html",
+          "target": "dft.html"
+        },
+	{
+          "unit-type": "task",
+          "label": "Breadth First Traversal Practice",
+          "content-type": "simulation",
+          "source": "simulation/bft-practice.html",
+          "target": "bft-practice.html"
+        },
+	{
+          "unit-type": "task",
+          "label": "Breadth First Traversal Exercise",
+          "content-type": "simulation",
+          "source": "simulation/bft-exercise.html",
+          "target": "bft-exercise.html"
+        },
+        {
+         "unit-type": "task",
+         "label": "Breadth First Traversal Quiz",
+         "content-type": "assesment",
+         "source": "breadth-first-traversal-quiz.js",
+         "target": "breadth-first-traversal-quiz.html"
+       }
+      ]
+    },
+    {
+      "unit-type": "task",
+      "label": "Post Test Instructions",
+      "content-type": "video",
+      "source": "post-test.md",
+      "target": "post-test.html"
+    },
+    {
+      "unit-type": "task",
+      "label": "Post Test Quiz",
+      "content-type": "assesment",
+      "source": "posttest.js",
+      "target": "posttest.html"
+    },
+       
+    {
+      "unit-type": "task",
+      "label": "Further Readings/References",
+      "content-type": "text",
+      "source": "further-reading-and-references.md",
+      "target": "further-reading-and-references.html"
+    }
+  ]
+}
