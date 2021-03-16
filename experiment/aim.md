@@ -1,10 +1,9 @@
 ### Learning Objectives of the Experiment
 
-In this experiment, we will be able to do the following:
+In this experiment, you will be able to do the following:
 
-   - Demonstrate understanding of the concepts of inserting elements into the heap, extract max operation and the rebuild operation in heapsort as key operations in heap sort
-   - Given an unsorted array of numbers, generate a sorted array of numbers by applying heapsort
-   - Understand HeapSort operations and associated time complexity through interactive animations
-   - Demonstrate knowledge of time complexity of heapsort by counting the number of operations involved in inserting heap and removing the root till the array becomes sorted (heapify operation)
-
-
+  -  Iterative and recursive traversals on Binary Tree, their algorithms, time and space complexity analysis.
+  -  Difference between search and traversal in a binary tree.
+  -  Understand the two broad categories of traversals, Breadth First and Depth First Traversal.
+  -  Given an inorder and preorder/postorder traversal , re-construct a binary tree.
+  -  Applications of different traversals in computer programming and compilers.
