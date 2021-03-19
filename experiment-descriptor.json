@@ -16,7 +16,7 @@
     {
       "unit-type": "task",
       "label": "Pre Test Quiz Instructions",
-      "content-type": "assesment",
+      "content-type": "video",
       "source": "pre-test.md",
       "target": "pre-test.html"
     },
