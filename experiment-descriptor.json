@@ -16,7 +16,7 @@
     {
       "unit-type": "task",
       "label": "Pre Test Quiz Instructions",
-      "content-type": "assesment",
+      "content-type": "video",
       "source": "pre-test.md",
       "target": "pre-test.html"
     },
@@ -211,13 +211,7 @@
        }
       ]
     },
-    {
-      "unit-type": "task",
-      "label": "Post Test Quiz Instructions",
-      "content-type": "video",
-      "source": "post-test.md",
-      "target": "post-test.html"
-    },
+    
     {
       "unit-type": "task",
       "label": "Post Test Quiz",
