@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Breadth First Traversals</title>
+<link rel="stylesheet" type="text/css" href="css/commonstyle.css"/>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/hint_box.css"/>
+<link rel="stylesheet" href="../../assets/css/common-styles.css">
+
+<body>
+<div class="instruction-box">
+  <button class="collapsible">Instructions</button>
+  <div class="content">
+    <ul>
+      <li>Click <b>New Graph</b> to generate a random graph.
+      <li>Click on the nodes in the correct sequence of
+      mentioned traversal.</li>
+      <li>Click <b>Reset</b> after completing each
+      traversal, before moving on to next traversal.</li>
+      <li>Click <b>Submit</b> after completing each
+      traversal to check</li>
+    </ul>
+  </div>
+</div>
+
+<div class="hint_con" id="hint_con_1" style="display: none;">
+  <div id="hint_title">RESULT</div>
+  <div id="hint"></div>
+</div>
+</div>
+
+<p id="que"><b>Question:</b> A student is working on an
+    algorithm and needed to traverse in Root-Right-Left
+    order. So, he named this traversal X-order.Please
+    traverse the following graph in X-order
+</p>
+    
+<div id="button-wrapper" class="buttons" style="top: 48vw !important;">
+  <button id="reset" type="button" value="Reset" class="green button_input"  onclick="reset()">Reset</button>
+  <button id="generategraph" type="button" value="Generate Graph" class="green button_input"  onclick="generateG()">New Graph</button>
+  <button id="submit" type="button" value="submit" class="green button_input"  onclick="submit()">Submit</button>
+</div>
+
+    <div id="tree"></div>
+    
+<div class="comment-box comment_box" id="commentbox" style="margin:auto;margin-top:27%;height:14vh;left:-34%;">
+  <b>Observations</b>
+  <div id="comments"></div>
+  <div id="seq" >
+    <div id="sequencelbl">
+      <b>Node Sequence:</b>
+      <div id="traversal"></div>
+    </div>
+  </div>
+</div> 
+
+<button id="postorder" type="button"  value="Postorder" class="green button_input"  onclick="postorder()">Postorder</button>
+<button id="generate" type="button" value="Generate Graph" class="green button_input"  onclick="generateGraph()" style="visibility: hidden">Generate Graph</button>
+<button id="preorder" type="button" value="Preorder" class="green button_input"  onclick="preorder()" style="visibility: hidden">Exorder</button>
+<button id="inorder" type="button" value="Inorder" class="green button_input"  onclick="inorder()">Inorder</button>
+    
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+<script src="js/data.js"></script>
+<script src="js/globalvariables.js"></script>
+<script src="js/traversals.js"></script>
+<script src="js/treeExercise.js"></script>
+<script src="../../assets/js/instruction-box.js"></script>
+</body>
