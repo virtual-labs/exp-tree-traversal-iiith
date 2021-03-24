@@ -129,8 +129,8 @@
           "unit-type": "task",
           "label": "Quiz",
           "content-type": "assesment",
-          "source": "tree-construction-quiz-quiz.js",
-          "target": "tree-construction-quiz-quiz.html"
+          "source": "tree-construction-quiz.js",
+          "target": "tree-construction-quiz.html"
         }
       ]
     },
