@@ -1,7 +1,5 @@
-### Estimated Time
-1 hour
 
-Prerequisites of the Experiment
+### Prerequisites of the Experiment
 
  Basic knowledge of
   - [Arrays](https://www.geeksforgeeks.org/array-data-structure/)

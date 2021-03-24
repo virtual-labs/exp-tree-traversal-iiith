@@ -1,3 +1,7 @@
+### Estimated Time
+
+25 minutes
+
 ### Introduction to Depth First Traversal
 
 Welcome to this module on Depth First Traversal..! Take a look at what you will go through in this module.
