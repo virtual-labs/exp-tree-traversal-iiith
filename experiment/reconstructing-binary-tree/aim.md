@@ -1,3 +1,7 @@
+### Estimated Time
+
+25 minutes
+
 ### Reconstructing binary tree from traversals
 
 Welcome to this module on reconstructing binary trees..! Take a look at what you will go through in this module.

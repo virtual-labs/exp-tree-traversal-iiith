@@ -13,13 +13,7 @@
       "source": "overview.md",
       "target": "overview.html"
     },
-    {
-      "unit-type": "task",
-      "label": "Pre Test Quiz Instructions",
-      "content-type": "video",
-      "source": "pre-test.md",
-      "target": "pre-test.html"
-    },
+    
     {
       "unit-type": "task",
       "label": "Pre Test Quiz",
@@ -35,23 +29,17 @@
         {
           "unit-type": "aim"
         },
-        {
-          "unit-type": "task",
-          "label": "Overview",
-          "content-type": "video",
-          "source": "overview.md",
-          "target": "overview.html"
-        },
+       
 	{
           "unit-type": "task",
-          "label": "Tree Traversals Basics",
+          "label": "Basics",
           "content-type": "video",
           "source": "tree-traversals-basics.md",
           "target": "tree-traversals-basics.html"
         },
         {
       "unit-type": "task",
-      "label": "Basics of Traversal Quiz",
+      "label": "Quiz",
       "content-type": "assesment",
       "source": "basics-of-traversal-quiz.js",
       "target": "basics-of-traversal-quiz.html"
@@ -67,51 +55,45 @@
         {
           "unit-type": "aim"
         },
-	{
-          "unit-type": "task",
-          "label": "Overview",
-          "content-type": "video",
-          "source": "overview.md",
-          "target": "overview.html"
-        },
+	
         {
           "unit-type": "task",
-          "label": "Depth First Traversal Recursive",
+          "label": "Recursive",
           "content-type": "video",
           "source": "depth-first-traversal-recursive.md",
           "target": "depth-first-traversal-recursive.html"
         },
         {
           "unit-type": "task",
-          "label": "Depth First Traversal Iterative",
+          "label": "Iterative",
           "content-type": "video",
           "source": "depth-first-traversal-iterative.md",
           "target": "depth-first-traversal-iterative.html"
         },
         {
           "unit-type": "task",
-          "label": "Depth First Traversal Demo",
+          "label": "Demo",
           "content-type": "simulation",
           "source": "simulation/dft.html",
           "target": "dft.html"
         },
 	{
           "unit-type": "task",
-          "label": "Depth First Traversal Practice",
+          "label": "Practice",
           "content-type": "simulation",
           "source": "simulation/dft-practice.html",
           "target": "dft-practice.html"
         },
 	{
           "unit-type": "task",
-          "label": "Depth First Traversal Exercise",
+          "label": "Exercise",
           "content-type": "simulation",
           "source": "simulation/dft-exercise.html",
           "target": "dft-exercise.html"
         },
         {
          "unit-type": "task",
-         "label": "Depth First Traversal Quiz",
+         "label": "Quiz",
          "content-type": "assesment",
          "source": "dfs-traversal-quiz.js",
          "target": "dfs-traversal-quiz.html"
@@ -126,13 +108,7 @@
         {
           "unit-type": "aim"
         },
-	{
-          "unit-type": "task",
-          "label": "Overview",
-          "content-type": "video",
-          "source": "overview.md",
-          "target": "overview.html"
-        },
+	
         {
           "unit-type": "task",
           "label": "From Inorder and Postorder",
@@ -151,10 +127,10 @@
 	
         {
           "unit-type": "task",
-          "label": "Tree Construction Quiz",
+          "label": "Quiz",
           "content-type": "assesment",
-          "source": "tree-construction-quiz-quiz.js",
-          "target": "tree-construction-quiz-quiz.html"
+          "source": "tree-construction-quiz.js",
+          "target": "tree-construction-quiz.html"
         }
       ]
     },
@@ -166,16 +142,10 @@
         {
           "unit-type": "aim"
         },
-	{
-          "unit-type": "task",
-          "label": "Overview",
-          "content-type": "video",
-          "source": "overview.md",
-          "target": "overview.html"
-        },
+	
         {
           "unit-type": "task",
-          "label": "Breadth First Traversal Theory",
+          "label": "Theory",
           "content-type": "video",
           "source": "breadth-first-traversal-theory.md",
           "target": "breadth-first-traversal-theory.html"
@@ -183,28 +153,28 @@
         
         {
           "unit-type": "task",
-          "label": "Breadth First Traversal Demo",
+          "label": "Demo",
           "content-type": "simulation",
           "source": "simulation/bft.html",
           "target": "dft.html"
         },
 	{
           "unit-type": "task",
-          "label": "Breadth First Traversal Practice",
+          "label": "Practice",
           "content-type": "simulation",
           "source": "simulation/bft-practice.html",
           "target": "bft-practice.html"
         },
 	{
           "unit-type": "task",
-          "label": "Breadth First Traversal Exercise",
+          "label": "Exercise",
           "content-type": "simulation",
           "source": "simulation/bft-exercise.html",
           "target": "bft-exercise.html"
         },
         {
          "unit-type": "task",
-         "label": "Breadth First Traversal Quiz",
+         "label": "Quiz",
          "content-type": "assesment",
          "source": "breadth-first-traversal-quiz.js",
          "target": "breadth-first-traversal-quiz.html"
