@@ -119,7 +119,7 @@
         
         {
           "unit-type": "task",
-          "label": "From Inorder and Postorder",
+          "label": "From Inorder and Preorder",
           "content-type": "video",
           "source": "from-inorder-and-preorder.md",
           "target": "from-inorder-and-preorder.html"
