@@ -8,9 +8,9 @@
 
 ### Algorithm: Tree construction from Inorder and Preorder
 
-Consider the following traversals of the tree.
-**Inorder** = {2, 5, 6, 10, 12, 14, 15}
-**Preorder** = {10, 5, 2, 6, 14, 12, 15}
+Consider the following traversals of the tree. <br>
+**Inorder** = {2, 5, 6, 10, 12, 14, 15} <br>
+**Preorder** = {10, 5, 2, 6, 14, 12, 15}<br>
 **Steps of construction:**
 
 1. First element in Preorder will be the root of the tree, here its 10.
