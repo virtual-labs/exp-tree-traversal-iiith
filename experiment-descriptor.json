@@ -32,7 +32,7 @@
        
 	{
           "unit-type": "task",
-          "label": "Basic Concept",
+          "label": "Concept",
           "content-type": "video",
           "source": "tree-traversals-basics.md",
           "target": "tree-traversals-basics.html"
