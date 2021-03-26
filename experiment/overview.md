@@ -6,7 +6,6 @@
       
   - [Lists](https://www.w3schools.com/python/python_lists.asp)
     
-  - [Binary Trees](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/trees.html)
      
 And above all, a curiosity to learn and explore..!
 
