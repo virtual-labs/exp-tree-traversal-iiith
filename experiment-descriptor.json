@@ -32,7 +32,7 @@
        
 	{
           "unit-type": "task",
-          "label": "Basics",
+          "label": "Basic Concept",
           "content-type": "video",
           "source": "tree-traversals-basics.md",
           "target": "tree-traversals-basics.html"
@@ -145,7 +145,7 @@
 	
         {
           "unit-type": "task",
-          "label": "Theory",
+          "label": "Concept",
           "content-type": "video",
           "source": "breadth-first-traversal-theory.md",
           "target": "breadth-first-traversal-theory.html"
