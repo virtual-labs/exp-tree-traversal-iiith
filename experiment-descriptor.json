@@ -13,14 +13,7 @@
       "source": "overview.md",
       "target": "overview.html"
     },
-    
-    {
-      "unit-type": "task",
-      "label": "Pre Test Quiz",
-      "content-type": "assesment",
-      "source": "pretest.js",
-      "target": "pretest.html"
-    },
+
     {
       "unit-type": "lu",
       "label": "Tree Traversals",
@@ -36,14 +29,7 @@
           "content-type": "video",
           "source": "tree-traversals-basics.md",
           "target": "tree-traversals-basics.html"
-        },
-        {
-      "unit-type": "task",
-      "label": "Quiz",
-      "content-type": "assesment",
-      "source": "basics-of-traversal-quiz.js",
-      "target": "basics-of-traversal-quiz.html"
-    }
+        }
       
       ]
     },
@@ -90,14 +76,7 @@
           "content-type": "simulation",
           "source": "simulation/dft-exercise.html",
           "target": "dft-exercise.html"
-        },
-        {
-         "unit-type": "task",
-         "label": "Quiz",
-         "content-type": "assesment",
-         "source": "dfs-traversal-quiz.js",
-         "target": "dfs-traversal-quiz.html"
-       }
+        }
       ]
     },
         {
@@ -123,14 +102,6 @@
           "content-type": "video",
           "source": "from-inorder-and-preorder.md",
           "target": "from-inorder-and-preorder.html"
-        },
-	
-        {
-          "unit-type": "task",
-          "label": "Quiz",
-          "content-type": "assesment",
-          "source": "tree-construction-quiz.js",
-          "target": "tree-construction-quiz.html"
         }
       ]
     },
@@ -171,25 +142,10 @@
           "content-type": "simulation",
           "source": "simulation/bft-exercise.html",
           "target": "bft-exercise.html"
-        },
-        {
-         "unit-type": "task",
-         "label": "Quiz",
-         "content-type": "assesment",
-         "source": "breadth-first-traversal-quiz.js",
-         "target": "breadth-first-traversal-quiz.html"
-       }
+        }
       ]
     },
-    
-    {
-      "unit-type": "task",
-      "label": "Post Test Quiz",
-      "content-type": "assesment",
-      "source": "posttest.js",
-      "target": "posttest.html"
-    },
-       
+
     {
       "unit-type": "task",
       "label": "Further Readings/References",
