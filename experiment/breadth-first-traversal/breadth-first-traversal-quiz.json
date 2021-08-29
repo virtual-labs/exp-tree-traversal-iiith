@@ -1,0 +1,34 @@
+{
+    "version": 2.0,
+    "questions": [
+        {
+            "question": "1. Let us consider V to be the total number of vertices and E to be the total number of edges in a tree. What is the time complexity of Breadth First Traversal in this tree?",
+            "answers": {
+                "a": "O(E * V)",
+                "b": "O(V)",
+                "c": "O(E + V)",
+                "d": "O(E + E * V)"
+            },
+            "correctAnswer": "c",
+            "explanations": {},
+            "difficulty": "hard"
+        },
+        {
+            "question": "2. What is the most appropriate data structure for Breadth First Traversal of a tree?",
+            "answers": {
+                "a": "Linked List",
+                "b": "Queue",
+                "c": "Stack",
+                "d": "Array"
+            },
+            "correctAnswer": "b",
+            "explanations": {
+                "a": "Ultimately the queue needs to be implemented from the linked list which increases overhead.",
+                "b": "Correct, using queue will result in breadth first traversal",
+                "c": "Incorrect, using stack will result in depth first traversal",
+                "d": "Size of the array should be defined in the beginning and we can simulate a queue using array."
+            },
+            "difficulty": "easy"
+        }
+    ]
+}
