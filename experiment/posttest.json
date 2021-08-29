@@ -60,10 +60,10 @@
             },
             "correctAnswer": "c",
             "explanations": {
-                "a": "Hint",
-                "b": "Hint",
+                "a": "Hint: Try obtaining the question from the result.",
+                "b": "Hint: Try obtaining the question from the result.",
                 "c": "Correct, building a binary tree from preorder and inorder traversals, and then running postorder traversal will give the result.",
-                "d": "Hint"
+                "d": "Hint: Try obtaining the question from the result."
             },
             "difficulty": "advanced"
         }
