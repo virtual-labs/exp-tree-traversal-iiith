@@ -1,1 +1,71 @@
-[{"question":"1. Traversal of a graph is different from tree because _________.","answers":{"a":"There can be loops in the graph so we must maintain a visited flag for every vertex ","b":"Depth first travesal of a graph uses queue whereas traversal of tree uses queue","c":"Breadth first traversal of a tree is not possible","d":"All of the mentioned"},"correctAnswer":"a"},{"question":"2. Breadth First Traversal of a tree can be used for _________.","answers":{"a":"Finding the shortest distance to every other node from the root in the tree","b":"Finding cycles in the tree ","c":"Finding strongly connected components in the tree","d":"None of the mentioned"},"correctAnswer":"a"},{"question":"3. What is common in three different types of traversals (Inorder, Preorder and Postorder)?","answers":{"a":"Root is visited after the left subtree","b":"Root is visited before the right subtree","c":"Left subtree is always visited before the right subtree","d":"All of the above"},"correctAnswer":"c"},{"question":"4. A binary tree can be uniquely re-constructed from ________.","answers":{"a":"Inorder and Preorder traversal ","b":"Preorder and Postorder traversal ","c":"Only Inorder traversal ","d":"Only Post order traversal"},"correctAnswer":"a"},{"question":"5. The inorder and preorder traversal of a binary tree are d b e a f c g and a b d e c f g, respectively. The postorder traversal of the binary tree is _________.","answers":{"a":"e d b g f c a","b":"d e f g b c a ","c":"d e b f g c a ","d":"d e b f g a c "},"correctAnswer":"c"}]
+{
+    "version": 2.0,
+    "questions": [
+        {
+            "question": "1. How is a tree different from a graph in terms of traversal?",
+            "answers": {
+                "a": "Depth first traversal is not possible for graphs, but can be implemented in trees.",
+                "b": "A graph contains cycles, and a tree doesn\u2019t. Hence some memory needs to be allocated to keep track of it while traversing in a graph.",
+                "c": "Breadth first traversal takes more time in graphs as compared to trees.",
+                "d": "All of the above"
+            },
+            "correctAnswer": "b",
+            "explanations": {
+                "a": "Depth first traversal can be performed in both graphs and trees.",
+                "b": "Yes, a visited array needs to be maintained to avoid getting stuck in infinite loops in graphs due to cycles.",
+                "c": "Breadth first traversal takes equal time whether it be graphs or trees."
+            },
+            "difficulty": "beginner"
+        },
+        {
+            "question": "2. We can rebuild binary tree using results of",
+            "answers": {
+                "a": "postorder and preorder traversal",
+                "b": "preorder traversal",
+                "c": "preorder and inorder traversal",
+                "d": "None of the above"
+            },
+            "correctAnswer": "c",
+            "explanations": {
+                "a": "This will result in incomplete information and hence the binary tree cannot be built.",
+                "b": "This will result in incomplete information and hence the binary tree cannot be built.",
+                "c": "Yes preorder and inorder traversal will provide complete information for identification of position of nodes in a binary tree."
+            },
+            "difficulty": "beginner"
+        },
+        {
+            "question": "3. To find the shortest distance between every node and starting node of the graph, which method can be used? ",
+            "answers": {
+                "a": "Inorder Traversal",
+                "b": "Depth First Traversal",
+                "c": "Binary Search",
+                "d": "Breadth First Traversal"
+            },
+            "correctAnswer": "d",
+            "explanations": {
+                "a": "Inorder traversal is a variant of Depth First Traversal which does not give the shortest distance.",
+                "b": "Ideal implementation of Depth First Traversal will traverse to every node irrespective of their distance from the starting node of the tree.",
+                "c": "Binary search is used to find values in logarithmic time. Hence, it never bothers about finding the shortest distance among nodes.",
+                "d": "Breadth First Traversal is performed level wise. Hence the node getting accessed always has the shortest distance from the starting node of the graph."
+            },
+            "difficulty": "intermediate"
+        },
+        {
+            "question": "4. Let us assume a binary tree consisting of nodes a, b, c, d, e, f, g (in no particular order). If the postorder traversal on the tree gives {d, e, b, f, g, c, a} as the results. Then what are the results of preorder and inorder traversals respectively?",
+            "answers": {
+                "a": "{d, f, g, a, b, c, e} and {a, f, d, g, c, b, e}",
+                "b": "{a, f, d, g, c, b, e} and {d, f, g, a, b, c, e}",
+                "c": "{a, b, d, e, c, f, g} and {d, b, e, a, f, c, g}",
+                "d": "{d, b, e, a, f, c, g} and {a, b, d, e, c, f, g}"
+            },
+            "correctAnswer": "c",
+            "explanations": {
+                "a": "Hint: Try obtaining the question from the result.",
+                "b": "Hint: Try obtaining the question from the result.",
+                "c": "Correct, building a binary tree from preorder and inorder traversals, and then running postorder traversal will give the result.",
+                "d": "Hint: Try obtaining the question from the result."
+            },
+            "difficulty": "advanced"
+        }
+    ]
+}
