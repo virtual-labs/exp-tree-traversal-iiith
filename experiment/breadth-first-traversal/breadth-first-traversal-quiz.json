@@ -11,7 +11,7 @@
             },
             "correctAnswer": "c",
             "explanations": {},
-            "difficulty": "hard"
+            "difficulty": "advanced"
         },
         {
             "question": "2. What is the most appropriate data structure for Breadth First Traversal of a tree?",
@@ -28,7 +28,7 @@
                 "c": "Incorrect, using stack will result in depth first traversal",
                 "d": "Size of the array should be defined in the beginning and we can simulate a queue using array."
             },
-            "difficulty": "easy"
+            "difficulty": "beginner"
         }
     ]
 }

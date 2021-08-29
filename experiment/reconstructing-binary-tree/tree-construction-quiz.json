@@ -11,7 +11,7 @@
             },
             "correctAnswer": "c",
             "explanations": {},
-            "difficulty": "hard"
+            "difficulty": "advanced"
         },
         {
             "question": "2. Consider the following Inorder and Preorder traversal of a binary tree:<br>Inorder = {D, B, E, A, F, G, C, H}<br>Postorder = {D, E, B, F, G, H, C, A}<br>Reconstruct the binary tree and choose the correct postorder traversal from the given options:",
@@ -23,7 +23,7 @@
             },
             "correctAnswer": "b",
             "explanations": {},
-            "difficulty": "hard"
+            "difficulty": "advanced"
         }
     ]
 }

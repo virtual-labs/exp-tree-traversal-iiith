@@ -11,7 +11,7 @@
             },
             "correctAnswer": "b",
             "explanations": {},
-            "difficulty": "hard"
+            "difficulty": "advanced"
         },
         {
             "question": "2. While performing inorder traversal in a tree, what is the sequence of nodes that gets visited?",
@@ -27,7 +27,7 @@
                 "b": "The priority of the left and right subtree does not align with the definition of inorder traversal.",
                 "c": "The priority of the root and left subtree does not align with the definition of inorder traversal."
             },
-            "difficulty": "easy"
+            "difficulty": "beginner"
         },
         {
             "question": "3. While performing preorder traversal in a tree, what is the sequence of nodes that gets followed?",
@@ -43,7 +43,7 @@
                 "b": "The priority of the root does not align with the definition of preorder traversal.",
                 "c": "Yes, this is the correct sequence for preorder traversal."
             },
-            "difficulty": "easy"
+            "difficulty": "beginner"
         },
         {
             "question": "4. For the post order traversal in the binary tree, what is the sequence of nodes that gets accessed?",
@@ -59,7 +59,7 @@
                 "b": "Yes, this is the correct sequence for post order traversal.",
                 "c": "The priority of the root does not align with the definition of post order traversal."
             },
-            "difficulty": "easy"
+            "difficulty": "beginner"
         }
     ]
 }

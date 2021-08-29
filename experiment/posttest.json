@@ -15,7 +15,7 @@
                 "b": "Yes, a visited array needs to be maintained to avoid getting stuck in infinite loops in graphs due to cycles.",
                 "c": "Breadth first traversal takes equal time whether it be graphs or trees."
             },
-            "difficulty": "easy"
+            "difficulty": "beginner"
         },
         {
             "question": "2. We can rebuild binary tree using results of",
@@ -31,7 +31,7 @@
                 "b": "This will result in incomplete information and hence the binary tree cannot be built.",
                 "c": "Yes preorder and inorder traversal will provide complete information for identification of position of nodes in a binary tree."
             },
-            "difficulty": "easy"
+            "difficulty": "beginner"
         },
         {
             "question": "3. To find the shortest distance between every node and starting node of the graph, which method can be used? ",
@@ -48,7 +48,7 @@
                 "c": "Binary search is used to find values in logarithmic time. Hence, it never bothers about finding the shortest distance among nodes.",
                 "d": "Breadth First Traversal is performed level wise. Hence the node getting accessed always has the shortest distance from the starting node of the graph."
             },
-            "difficulty": "medium"
+            "difficulty": "intermediate"
         },
         {
             "question": "4. Let us assume a binary tree consisting of nodes a, b, c, d, e, f, g (in no particular order). If the postorder traversal on the tree gives {d, e, b, f, g, c, a} as the results. Then what are the results of preorder and inorder traversals respectively?",
@@ -65,7 +65,7 @@
                 "c": "Correct, building a binary tree from preorder and inorder traversals, and then running postorder traversal will give the result.",
                 "d": "Hint"
             },
-            "difficulty": "hard"
+            "difficulty": "advanced"
         }
     ]
 }
