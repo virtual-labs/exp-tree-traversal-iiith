@@ -3,9 +3,6 @@ html,body {
   position:relative;
 }
 
-
-
-
 #title{
   font-size: 20px;
   width: 60%;
@@ -13,7 +10,6 @@ html,body {
   margin-left: 20%;
   border-bottom: thin solid black;
 }
-
 
 .buttons {
   top:45vw;
@@ -35,7 +31,7 @@ html,body {
   padding: 1%;
   text-align: center;
   text-decoration: none;
-  font-size: 1.5vw;
+  /* font-size: 1.5vw; */
   font-family: arial;
   margin-left: 2%;
   margin-right: 2%; 
@@ -74,7 +70,7 @@ html,body {
 
 #que{
   position: relative;
-  font-size: 1.7vw;
+  /* font-size: 1.7vw; */
   }
 
 
