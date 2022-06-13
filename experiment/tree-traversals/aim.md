@@ -4,7 +4,7 @@
 
 ### Introduction to Tree Traversal
 
-Welcome to this module on tree traversal! Take a look at what you will go through the module.
+Welcome to this module on tree traversal! Take a look at what you will go through in this module.
 
   - What is Tree Traversal?
   - Different types of Tree Traversals
