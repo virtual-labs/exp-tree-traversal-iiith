@@ -57,7 +57,18 @@ function check(d){
     if(tree_traversal.sequence_list[index]){
   
     document.getElementById("commentbox").style.display = "block";
-    document.getElementById("comments").innerHTML = 'Wrong sequence.Try again! \n HINT: Next node in traversal: '+tree_traversal.sequence_list[index]
+    let traversaltype = document.getElementById("trav").value;
+    let hintText = 'Wrong sequence.Try again! \n HINT: Next node in traversal: '+tree_traversal.sequence_list[index];
+
+    if(traversaltype==="inorder"){
+     hintText = 'Wrong sequence.Try again! \n HINT:The traversal is : Inorder(Left,Root,Right)'
+    } else if(traversaltype==="preorder"){
+      hintText = 'Wrong sequence.Try again! \n HINT:The traversal is : Preorder(Root,Left,Right)'
+    }else if(traversaltype==="postorder"){
+     hintText = 'Wrong sequence.Try again! \n HINT:The traversal is : Postorder(Left,Right,Root)'
+    }
+    
+    document.getElementById("comments").innerHTML = hintText;
     tree_traversal.error=1;
     index--;      
   }
