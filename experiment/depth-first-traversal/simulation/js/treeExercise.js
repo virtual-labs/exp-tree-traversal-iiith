@@ -98,14 +98,6 @@ if(tree_traversal.traversal_selected==false){
     index+=1; 
     if(index==(tree_traversal.sequence_list.length-1)){
     visitElement(d,0)
-    if(tree_traversal.error==0){
-    document.getElementById("commentbox").style.display = "block";
-    document.getElementById("comments").innerHTML = 'Traversal Complete.Your Traversal is correct!'
-    }
-    else{
-    document.getElementById("commentbox").style.display = "block";
-    document.getElementById("comments").innerHTML = 'Traversal Complete.Your Traversal is incorrect.Try again! \n Re-attempt practice section.'
-    }
     }
     else if( d.name!=tree_traversal.sequence_list[index] )
     {  
