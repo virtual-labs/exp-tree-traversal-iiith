@@ -84,8 +84,6 @@ function resetTraversal() {
     
 //Submitting by comparing the user's clicks and the actual answer 
 function submit(){
-    console.log(selected_nodes);
-    console.log(tree_traversal.sequence_list);
     // Comparing and checking the equality of the two lists 
     if(selected_nodes.length!=tree_traversal.sequence_list.length){
         tree_traversal.error=1;
