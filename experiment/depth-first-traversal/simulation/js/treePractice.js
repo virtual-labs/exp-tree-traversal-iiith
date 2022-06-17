@@ -57,13 +57,13 @@ function check(d){
     if(tree_traversal.sequence_list[index]){
   
     document.getElementById("commentbox").style.display = "block";
-    let traversaltype = document.getElementById("trav").value;
+    let traversalType = document.getElementById("trav").value;
     let hintText = 'Wrong sequence.Try again! \n HINT: Next node in traversal: '+tree_traversal.sequence_list[index];
-    if(traversaltype==="inorder"){
+    if(traversalType==="inorder"){
      hintText = 'Wrong sequence.Try again! \n HINT:The traversal is : Inorder(Left,Root,Right)'
-    } else if(traversaltype==="preorder"){
+    } else if(traversalType==="preorder"){
       hintText = 'Wrong sequence.Try again! \n HINT:The traversal is : Preorder(Root,Left,Right)'
-    }else if(traversaltype==="postorder"){
+    }else if(traversalType==="postorder"){
      hintText = 'Wrong sequence.Try again! \n HINT:The traversal is : Postorder(Left,Right,Root)'
     }
     document.getElementById("comments").innerHTML = hintText;   
