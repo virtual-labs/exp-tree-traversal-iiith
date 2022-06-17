@@ -206,6 +206,7 @@ const haveSameData = function(obj1, obj2) {
 
 // A function that adds the colour to the node when clicked   
 function visitElement(element, animX) {
+    document.getElementById("undo").style.color = '#FFFFFF';
     let len = node_elements.length;
     console.log(len);
     if(len!=1&&(haveSameData(node_elements[len-1],node_elements[len-2]))){
@@ -223,6 +224,7 @@ function visitElement(element, animX) {
 
 //The function that performs the removal of colour from a node for the undo function 
 function clearElement(element, animX) {
+    document.getElementById("undo").style.color = '#404040';
     console.log(selected_nodes);    
     d3.select("#node-" + element.id)
         .transition().duration(tree_traversal.animDuration).delay(tree_traversal.animDuration * animX)
