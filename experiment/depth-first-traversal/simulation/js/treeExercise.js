@@ -1,12 +1,13 @@
 
 if(document.getElementById('inorder')){
     document.getElementById('inorder').style.visibility = 'hidden';}
-    if(document.getElementById('postorder')){
+if(document.getElementById('postorder')){
     document.getElementById('postorder').style.visibility = 'hidden';}
-    let node_elements = [];
-    let prev_node_elements = null;
+    let nodeElements = [];
+    let prev_nodeElements = null;
     let selected_nodes = [];
-    let s = "";
+    let prev_selected_node = null;
+
     
 //Code to generate a graph 
 function generateGraph(){
@@ -21,7 +22,6 @@ function generateGraph(){
     .attr("transform", "translate(" + tree_traversal.margin.left + "," + tree_traversal.margin.top + ")");
     var random=Math.floor(Math.random() * 100);  
     random=(random%treeData.length);
-    console.log(random);
     root= treeData[random];
     update(treeData[random]);
     if(document.getElementById("preorder"))preorder();
@@ -52,7 +52,7 @@ function resetTraversal() {
     tree_traversal.sequence_list = []
     selected_nodes = [];
     prev_selected_node = null;
-    nodeelements = [];
+    nodeElements = [];
     index = -1;
     document.getElementById("traversal").innerHTML = "";
     document.getElementById("comments").innerHTML = "";
@@ -85,7 +85,7 @@ function resetTraversal() {
 //Submitting by comparing the user's clicks and the actual answer 
 function submit(){
     // Comparing and checking the equality of the two lists 
-    if(selected_nodes.length!=tree_traversal.sequence_list.length){
+    if(selected_nodes.length!==tree_traversal.sequence_list.length){
         tree_traversal.error=1;
         
     }else{
@@ -97,7 +97,7 @@ function submit(){
         }
     }
     }    
-    if(tree_traversal.error==1){
+    if(tree_traversal.error===1){
         document.getElementById("commentbox").style.display = "block";
         document.getElementById("comments").innerHTML = 'Traversal Complete.Your Traversal is incorrect.Try again! \n Re-attempt practice section.'
         document.getElementById("traversal").innerHTML = selected_nodes.toString();
@@ -109,10 +109,10 @@ function submit(){
     } 
     }
 
-// Function that checks what the user clicks and pushes it into a list
-function check(d){
+// Function that checks what the user clicks on a node  and pushes it  into a list
+function checkClick(d){
     selected_nodes.push(d.name);
-    node_elements.push(d);
+    nodeElements.push(d);
     prev_selected_node = d;
     visitElement(d, 0);
 }
@@ -120,7 +120,7 @@ function check(d){
 function undo(){
     if(selected_nodes.length>0){
     selected_nodes.pop();
-    node_elements.pop();
+    nodeElements.pop();
     clearElement(prev_selected_node,0);
     }
 }
@@ -154,7 +154,7 @@ function update(root) {
         .style("stroke", "rgb(158, 208, 62)")
         .style("cursor","pointer")
         .on("click", function(d) {
-                check(d);
+                checkClick(d);
         }   )
         .html(i)
     elemEnter.append("text")
@@ -173,7 +173,7 @@ function update(root) {
         .style("font-size", "22px")
         .style("cursor","pointer")
         .on("click", function(d) {
-            check(d);
+            checkClick(d);
     }   ); 
     var linkWrapper = svg.append("g").attr("id","links").selectAll("path.link")
     .data(links, function(d) { return d.target.id; })
@@ -207,13 +207,11 @@ const haveSameData = function(obj1, obj2) {
 // A function that adds the colour to the node when clicked   
 function visitElement(element, animX) {
     document.getElementById("undo").style.color = '#FFFFFF';
-    let len = node_elements.length;
-    console.log(len);
-    if(len!=1&&(haveSameData(node_elements[len-1],node_elements[len-2]))){
+    let len = nodeElements.length;
+    if(len!=1&&(haveSameData(nodeElements[len-1],nodeElements[len-2]))){
         selected_nodes.pop();
-        node_elements.pop();
+        nodeElements.pop();
     }else{
-    console.log(tree_traversal.sequence_list);
     d3.select("#node-" + element.id)
         .transition().duration(tree_traversal.animDuration).delay(tree_traversal.animDuration * animX)
         .style("fill", "rgb(158, 208, 62)").style("stroke", "rgb(158, 208, 62)");
@@ -224,8 +222,7 @@ function visitElement(element, animX) {
 
 //The function that performs the removal of colour from a node for the undo function 
 function clearElement(element, animX) {
-    document.getElementById("undo").style.color = '#404040';
-    console.log(selected_nodes);    
+    document.getElementById("undo").style.color = '#404040'; 
     d3.select("#node-" + element.id)
         .transition().duration(tree_traversal.animDuration).delay(tree_traversal.animDuration * animX)
         .style("fill", "rgb(255, 255, 255)").style("stroke", "rgb(70, 130, 180)");
@@ -245,10 +242,8 @@ function bft() {
     var animX = 0;
     queue.push(root);
     while (queue.length !== 0) {
-        console.log(queue);
         var element = queue.shift();
         tree_traversal.sequence_list.push(element.name);
-        console.log(tree_traversal.sequence_list)
         if (element.children !== undefined) {
             for (var i = element.children.length-1; i > -1; i--) {
                 queue.push(element.children[i]);
@@ -265,7 +260,6 @@ function recursiveInorder(root) {
         if (root.children !== undefined)
             recursiveInorder(root.children[0])
             tree_traversal.sequence_list.push(root.name);
-        console.log("called", tree_traversal.sequence_list);
         if (root.children !== undefined)
             recursiveInorder(root.children[1])
     }
@@ -273,7 +267,6 @@ function recursiveInorder(root) {
 
 //Preorder traversal 
 function recursivePreorder(root) {
-    console.log("called", root)
     if (root !== undefined) {
     tree_traversal.sequence_list.push(root.name);
         if (root.children !== undefined)
@@ -284,7 +277,6 @@ function recursivePreorder(root) {
 }
 //PostOrder traversal 
 function recursivePostorder(root) {
-    console.log("called", root)
     if (root !== undefined) {
         if (root.children !== undefined)
             recursivePostorder(root.children[0])
