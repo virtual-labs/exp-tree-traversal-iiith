@@ -57,7 +57,7 @@ function check(d){
     if(tree_traversal.sequence_list[index]){
   
     document.getElementById("commentbox").style.display = "block";
-    let traversalType = document.getElementById("trav").value;
+    const traversalType = document.getElementById("trav").value;
     let hintText = 'Wrong sequence.Try again! \n HINT: Next node in traversal: '+tree_traversal.sequence_list[index];
     if(traversalType==="inorder"){
      hintText = 'Wrong sequence.Try again! \n HINT:The traversal is : Inorder(Left,Root,Right)'
