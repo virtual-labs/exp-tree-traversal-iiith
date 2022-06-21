@@ -119,9 +119,18 @@ function checkClick(d){
 //The undo function that undoes the button the user just clicked 
 function undo(){
     if(selected_nodes.length>0){
-    selected_nodes.pop();
-    nodeElements.pop();
-    clearElement(prev_selected_node,0);
+        if(sameElement(prev_selected_node)===true){
+            selected_nodes.pop();
+            nodeElements.pop();
+            document.getElementById("traversal").innerHTML = selected_nodes.toString();
+            document.getElementById("undo").style.color = '#404040';
+            document.getElementById("undo").disabled = true;
+        }else{
+        selected_nodes.pop();
+        nodeElements.pop();
+        clearElement(prev_selected_node,0);
+        document.getElementById("undo").disabled = true;
+        }
     }
 }
 
@@ -204,8 +213,26 @@ const haveSameData = function(obj1, obj2) {
     return false;
 }
 
+//function that checks if the list of selected nodes contains similar nodes 
+
+const sameElement = function(element){
+    let count = 0;
+    for(let i = 0;i<nodeElements.length;i++){
+        if(haveSameData(nodeElements[i],element)===true){
+            count++;
+        }
+        console.log(count);
+        if(count > 1){
+            return true;
+        }
+    }
+   
+    return false;
+}
+
 // A function that adds the colour to the node when clicked   
 function visitElement(element, animX) {
+    document.getElementById("undo").disabled = false;
     document.getElementById("undo").style.color = '#FFFFFF';
     let len = nodeElements.length;
     if(len!=1&&(haveSameData(nodeElements[len-1],nodeElements[len-2]))){
@@ -218,7 +245,11 @@ function visitElement(element, animX) {
     document.getElementById("node-text" + element.id).style.pointerEvents = 'none';
     tree_traversal.disabled_ids.push("node-text" + element.id);
     }
+    document.getElementById("traversal").innerHTML = selected_nodes.toString();
+
 }
+
+
 
 //The function that performs the removal of colour from a node for the undo function 
 function clearElement(element, animX) {
@@ -228,6 +259,8 @@ function clearElement(element, animX) {
         .style("fill", "rgb(255, 255, 255)").style("stroke", "rgb(70, 130, 180)");
     document.getElementById("node-text" + element.id).style.pointerEvents = 'none';
     tree_traversal.disabled_ids.push("node-text" + element.id);
+    document.getElementById("traversal").innerHTML = selected_nodes.toString();
+    
 }
     
 // Performs the bft   

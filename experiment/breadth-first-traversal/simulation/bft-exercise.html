@@ -20,6 +20,7 @@
        traversal, before moving on to next traversal.</li>
        <li>Click on text inside the circle to select the
        node for traversal</li>
+       <li>Click <b>Undo</b> to undo your <b>last action </b> - undoing your click of a node will be as if you never clicked it</li>
     </ul>
   </div>
 </div>
@@ -41,7 +42,7 @@ Select the correct sudo BFT by generating a graph. </p>
         <button id="reset" type="button" value="Reset" class="green" onclick="reset()">Reset</button>
         <button id="generategraph" type="button" value="Generate Graph" class="green button_input"  onclick="generateG()">New Graph</button>
         <button id="submit" type="button" value="submit" class="green button_input"  onclick="submit()">Submit</button>
-   
+        <button id="undo" type="button" value="undo" class="green button_input"  onclick="undo()">Undo</button>
     </div>
 
     <div id="tree">
@@ -52,11 +53,13 @@ Select the correct sudo BFT by generating a graph. </p>
   <div id="comments"></div>
   <div id="seq" >
      <div id="sequencelbl">
-       <b>Node Sequence:</b>
-       <div id="traversal"></div>
+       
      </div>
   </div>
 </div> 
+
+<b>Node Sequence:</b>
+<div id="traversal"></div>
 
 <button id="generate" type="button" value="Generate Graph" class="green" onclick="generateGraph() " style="visibility: hidden">Generate</button>
 <button id="bft" type="button" value ="Breadth First" class="green" onclick="bft()" style="visibility: hidden">Sudo BFT</button>

@@ -2,9 +2,14 @@ if(document.getElementById('inorder')){
 document.getElementById('inorder').style.visibility = 'hidden';}
 if(document.getElementById('postorder')){
 document.getElementById('postorder').style.visibility = 'hidden';}
+let nodeElements = [];
+let prev_nodeElements = null;
+let selected_nodes = [];
+let prev_selected_node = null;
 
 
-  function generateGraph(){
+//Code to generate a graph
+function generateGraph(){
     textTraversal=document.getElementById('tree');
     d3.select("svg").remove();
     svg = d3.select("#tree").append("svg")
@@ -16,7 +21,6 @@ document.getElementById('postorder').style.visibility = 'hidden';}
     .attr("transform", "translate(" + tree_traversal.margin.left + "," + tree_traversal.margin.top + ")");
     var random=Math.floor(Math.random() * 100);  
     random=(random%treeData.length);
-    console.log(random);
     root= treeData[random];
     update(treeData[random]);
     if(document.getElementById("preorder"))preorder();
@@ -25,7 +29,7 @@ document.getElementById('postorder').style.visibility = 'hidden';}
 
   
 
-
+//Resetting all variables and browser elements   
 function resetTraversal() {
     tree_traversal.error = 0;
     document.getElementById("commentbox").style.display = "none";
@@ -46,6 +50,9 @@ function resetTraversal() {
     }
     tree_traversal.traversal_selected = false;
     tree_traversal.sequence_list = []
+    selected_nodes = [];
+    prev_selected_node = null;
+    nodeElements = [];
     index = -1;
     document.getElementById("traversal").innerHTML = "";
     document.getElementById("comments").innerHTML = "";
@@ -72,51 +79,57 @@ function resetTraversal() {
     }
   }
 
-
-  function submit(){
-        if(index==(tree_traversal.sequence_list.length-1)){
-        if(tree_traversal.error==0){
-        document.getElementById("commentbox").style.display = "block";
-        document.getElementById("comments").innerHTML = 'Traversal Complete.Your Traversal is correct!'
+//Submitting by comparing the user's clicks and the actual answer 
+function submit(){
+     // Comparing and checking the equality of the two lists 
+     if(selected_nodes.length!==tree_traversal.sequence_list.length){
+        tree_traversal.error=1;
+        
+    }else{
+    for(let i=0; i<selected_nodes.length; i++){
+        
+        if(selected_nodes[i]!=tree_traversal.sequence_list[i]){
+            tree_traversal.error=1;
+            break;
         }
-        else{
+    }
+    }    
+    if(tree_traversal.error===1){
         document.getElementById("commentbox").style.display = "block";
         document.getElementById("comments").innerHTML = 'Traversal Complete.Your Traversal is incorrect.Try again! \n Re-attempt practice section.'
-        }
-        }
-        else{
+        
+    }
+    else{
         document.getElementById("commentbox").style.display = "block";
-        document.getElementById("comments").innerHTML = 'Traversal Incomplete.Your Traversal is incorrect.Try again! \n Re-attempt practice section.'
-        }
-        }
-
+        document.getElementById("comments").innerHTML = 'Traversal Complete.Your Traversal is correct!'
+       
+    } 
+    }
+    
+// Function that checks what the user clicks on a node  and pushes it  into a list
 function check(d){
-if(tree_traversal.traversal_selected==false){
-      alert("Select a traversal first.");
-      return;
+    selected_nodes.push(d.name);
+    nodeElements.push(d);
+    prev_selected_node = d;
+    visitElement(d, 0);
     }
-    index+=1; 
-    if(index==(tree_traversal.sequence_list.length-1)){
-    visitElement(d,0)
-    if(tree_traversal.error==0){
-    document.getElementById("commentbox").style.display = "block";
-    document.getElementById("comments").innerHTML = 'Traversal Complete.Your Traversal is correct!'
+//The undo function that undoes the button the user just clicked 
+function undo(){
+    if(selected_nodes.length>0){
+        if(sameElement(prev_selected_node)===true){
+            selected_nodes.pop();
+            nodeElements.pop();
+            document.getElementById("traversal").innerHTML = selected_nodes.toString();
+            document.getElementById("undo").style.color = '#404040';
+            document.getElementById("undo").disabled = true;
+        }else{
+        selected_nodes.pop();
+        nodeElements.pop();
+        clearElement(prev_selected_node,0);
+        document.getElementById("undo").disabled = true;
+        }
     }
-    else{
-    document.getElementById("commentbox").style.display = "block";
-    document.getElementById("comments").innerHTML = 'Traversal Complete.Your Traversal is incorrect.Try again! \n Re-attempt practice section.'
-    }
-    }
-    else if( d.name!=tree_traversal.sequence_list[index] )
-    {  
-        tree_traversal.error=1;
-    visitElement(d,0);   
-    }
-    else{
-    visitElement(d,0);
-    }
-    }
-
+}
 
 function update(root) {
     resetTraversal();
@@ -186,20 +199,67 @@ function update(root) {
 
 
 
+// The function that stores if two objects have the same data or not 
+const haveSameData = function(obj1, obj2) {
+    const obj1Length = Object.keys(obj1).length;
+    const obj2Length = Object.keys(obj2).length;
 
+    if(obj1Length === obj2Length) {
+        return Object.keys(obj1).every(
+            key => obj2.hasOwnProperty(key)
+               && obj2[key] === obj1[key]);
+    }
+    return false;
+}
+
+
+//function that checks if the list of selected nodes contains a particular node
+
+const sameElement = function(element){
+    let count = 0;
+    for(let i = 0;i<nodeElements.length;i++){
+        if(haveSameData(nodeElements[i],element)===true){
+            count++;
+        }
+        if(count > 1){
+            return true;
+        }
+    }
+   
+    return false;
+}
+
+// A function that adds the colour to the node when clicked   
 function visitElement(element, animX) {
-    if(!tree_traversal.sequence_list[index])
-        return;
-    
-
+    document.getElementById("undo").disabled = false;
+    document.getElementById("undo").style.color = '#FFFFFF';
+    let len = nodeElements.length;
+    if(len!=1&&(haveSameData(nodeElements[len-1],nodeElements[len-2]))){
+        selected_nodes.pop();
+        nodeElements.pop();
+    }else{
     d3.select("#node-" + element.id)
         .transition().duration(tree_traversal.animDuration).delay(tree_traversal.animDuration * animX)
         .style("fill", "rgb(158, 208, 62)").style("stroke", "rgb(158, 208, 62)");
-    setTimeout(function() {
-        d3.select("#traversal").append("text").text(element.name + " ");
-    }, 1.2 * tree_traversal.animDuration * animX);
     document.getElementById("node-text" + element.id).style.pointerEvents = 'none';
     tree_traversal.disabled_ids.push("node-text" + element.id);
+    }
+    document.getElementById("traversal").innerHTML = selected_nodes.toString();
+
+}
+
+
+
+//The function that performs the removal of colour from a node for the undo function 
+function clearElement(element, animX) {
+    document.getElementById("undo").style.color = '#404040'; 
+    d3.select("#node-" + element.id)
+        .transition().duration(tree_traversal.animDuration).delay(tree_traversal.animDuration * animX)
+        .style("fill", "rgb(255, 255, 255)").style("stroke", "rgb(70, 130, 180)");
+    document.getElementById("node-text" + element.id).style.pointerEvents = 'none';
+    tree_traversal.disabled_ids.push("node-text" + element.id);
+    document.getElementById("traversal").innerHTML = selected_nodes.toString();
+    
 }
 
 
@@ -214,10 +274,8 @@ function bft() {
     var animX = 0;
     queue.push(root);
     while (queue.length !== 0) {
-        console.log(queue);
         var element = queue.shift();
         tree_traversal.sequence_list.push(element.name);
-        console.log(tree_traversal.sequence_list)
         if (element.children !== undefined) {
             for (var i = element.children.length-1; i > -1; i--) {
                 queue.push(element.children[i]);
@@ -234,13 +292,11 @@ var animX1=0;
          if (root.children !== undefined)
              recursiveInorder(root.children[0])
              tree_traversal.sequence_list.push(root.name);
-         console.log("called", tree_traversal.sequence_list);
          if (root.children !== undefined)
              recursiveInorder(root.children[1])
      }
  }
  function recursivePreorder(root) {
-     console.log("called", root)
      if (root !== undefined) {
         tree_traversal.sequence_list.push(root.name);
          if (root.children !== undefined)
@@ -250,7 +306,6 @@ var animX1=0;
      }
  }
  function recursivePostorder(root) {
-     console.log("called", root)
      if (root !== undefined) {
          if (root.children !== undefined)
              recursivePostorder(root.children[0])
