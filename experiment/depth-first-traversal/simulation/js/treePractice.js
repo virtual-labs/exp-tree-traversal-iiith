@@ -1,38 +1,48 @@
+import { treeData } from "./data.js";
+import { tree_traversal,svg,root,i,changesvg,changeroot,changei} from "./globalvariables.js";
+import { togglecolors,preorder,postorder,inorder} from "./traversals.js";
+
+
+let index = 0;
+
 function change(){
-  console.log("inchange");
+  
  // document.getElementById("startNext").innerHTML="Start";
   resetTraversal();    
   if(document.getElementById("trav")){
+  resetTraversal();
   if(document.getElementById("trav").value=="inorder")inorder();
   if(document.getElementById("trav").value=="preorder")preorder();
   if(document.getElementById("trav").value=="postorder")postorder();            
   }
 }
+window.change = change;
 
-  function generateGraph()
+  export function generateGraph()
   {
-    textTraversal=document.getElementById('tree');
+    let textTraversal=document.getElementById('tree');
     d3.select("svg").remove();
-    svg = d3.select("#tree").append("svg")
+    changesvg(d3.select("#tree").append("svg")
     .attr("id","grap") 
     .attr("width", tree_traversal.width + tree_traversal.margin.right + tree_traversal.margin.left)
     .attr("height", tree_traversal.height + tree_traversal.margin.top + tree_traversal.margin.bottom)
     .attr('viewBox','-70 -15 700 530')
     .append("g")
-    .attr("transform", "translate(" + tree_traversal.margin.left + "," + tree_traversal.margin.top + ")");
+    .attr("transform", "translate(" + tree_traversal.margin.left + "," + tree_traversal.margin.top + ")"));
     var random=Math.floor(Math.random() * 100);  
     random=(random%treeData.length);
-    console.log(random);
-    root= treeData[random];
+
+    changeroot( treeData[random]);
     update(treeData[random]);
     
   if(tree_traversal.traversal_selected==false){
     if(document.getElementById("trav")){
+      resetTraversal();
     if(document.getElementById("trav").value=="inorder")inorder();
     if(document.getElementById("trav").value=="preorder")preorder();
     if(document.getElementById("trav").value=="postorder")postorder();            
     }
-    console.log("gk");  
+
   tree_traversal.traversal_selected==true;
   }
   }
@@ -71,7 +81,7 @@ function check(d){
 }
 
 
-function resetTraversal()
+export function resetTraversal()
 {
 
   document.getElementById("generate").disabled=false;
@@ -88,7 +98,7 @@ function resetTraversal()
 
   if(tree_traversal.disabled_ids.length >0)
   {
-    for(i=0;i<tree_traversal.disabled_ids.length;i++)
+    for(changei(0);i<tree_traversal.disabled_ids.length;changei(i+1))
     {
       document.getElementById(tree_traversal.disabled_ids[i]).style.pointerEvents = 'auto'; 
     }
@@ -96,7 +106,7 @@ function resetTraversal()
   }
   tree_traversal.traversal_selected = false;
   tree_traversal.sequence_list=[]
-  index=-1;
+   index=-1;
   document.getElementById("traversal").innerHTML = "";
   document.getElementById("comments").innerHTML = "";
   d3.selectAll(".node")
@@ -114,7 +124,7 @@ function resetTraversal()
     document.getElementById("inorder").style.color = '#FFFFFF';
     document.getElementById("postorder").style.color = '#FFFFFF';
     document.getElementById("preorder").style.color = '#FFFFFF';
-    console.log("changinggg colorrr");
+  
   }
   else if(document.getElementById("bft")) 
   {
@@ -131,7 +141,7 @@ function update(root)
   links = tree_traversal.tree.links(nodes);
   nodes.forEach(function(d) { d.y = d.depth *150; });
   var nodes1 = svg.append("g").attr("id","nodes").selectAll("g.node")
-  .data(nodes, function(d) {return d.id || (d.id = ++i); });
+  .data(nodes, function(d) {return d.id || (d.id = changei(i+1)); });
   var elemEnter = nodes1.enter()
   .append("g")
   elemEnter.append("circle")
@@ -198,10 +208,9 @@ function visitElement(element,animX){
     queue.push(root);
       while(queue.length!==0)
       {
-        console.log(queue);
         var element = queue.shift();
         tree_traversal.sequence_list.push(element.name);
-        console.log(tree_traversal.sequence_list)
+ 
         if(element.children!==undefined)
         {
           for(var i=0; i<element.children.length; i++)
@@ -215,21 +224,21 @@ function visitElement(element,animX){
 
 
 var animX1=0;
-function recursiveInorder(root){ 
+export function recursiveInorder(root){ 
   if(root!==undefined){
     if(root.children!==undefined)
       recursiveInorder(root.children[0])
    tree_traversal.sequence_list.push(root.name);
-   console.log("called",tree_traversal.sequence_list);
+
     
     if(root.children!==undefined)
       recursiveInorder(root.children[1])
   }
 }
 
-function recursivePreorder(root)
+export function recursivePreorder(root)
 {
-  console.log("called",root)
+ 
   if(root!==undefined)
   {
     tree_traversal.sequence_list.push(root.name);
@@ -239,9 +248,9 @@ function recursivePreorder(root)
       recursivePreorder(root.children[1])
   }
 }
-function recursivePostorder(root)
+export function recursivePostorder(root)
 {
-  console.log("called",root)
+  
   if(root!==undefined)
   {  
     if(root.children!==undefined)
@@ -258,5 +267,7 @@ function generateG(){
   resetTraversal();
   generateGraph();
 }
+window.generateG=generateG;
 
 generateGraph()
+

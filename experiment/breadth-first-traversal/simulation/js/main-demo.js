@@ -1,3 +1,7 @@
+import { treeData } from "./data.js";
+import { tree_traversal,svg,root,i,changesvg,changeroot,changei} from "./globalvariables.js";
+import { togglecolors,preorder,postorder,inorder} from "./traversals-demo.js";
+
 function change(){
     document.getElementById("startNext").innerHTML="Next";
     resetTraversal(); 
@@ -13,15 +17,14 @@ function change(){
 var paused=0;
 var dem;
 var flag_started=0;
-var i=0;
-svg = d3.select("#tree").append("svg")
+changesvg(d3.select("#tree").append("svg")
   .attr("id","grap")
   .attr("width", tree_traversal.width + tree_traversal.margin.right + tree_traversal.margin.left)
   .attr("height", tree_traversal.height + tree_traversal.margin.top + tree_traversal.margin.bottom)
   .attr('viewBox','-70 -15 700 500')
   .append("g")
-  .attr("transform", "translate(" + tree_traversal.margin.left + "," + tree_traversal.margin.top + ")");
-root= treeData[0];
+  .attr("transform", "translate(" + tree_traversal.margin.left + "," + tree_traversal.margin.top + ")"));
+changeroot(treeData[0]);
 update(treeData[0]);
 
 document.getElementById("startNext").innerHTML="Start";
@@ -45,14 +48,15 @@ function startNext(){
         i++;
         if(i==ans.length)clearInterval(dem);}
 }
-  function resetTraversal() {
-    i=0;
+window.startNext=startNext;
+export   function resetTraversal() {
+    changei(0);
     paused=0;
     document.getElementById("pause").innerHTML="pause";
     ans=[];
     flag_started=0; 
     if(dem){clearInterval(dem);}
-    textTraversal = document.getElementById('traversal');
+    let textTraversal = document.getElementById('traversal');
     while (textTraversal.firstChild) {
         textTraversal.removeChild(textTraversal.firstChild);
     }
@@ -102,7 +106,7 @@ function update(root) {
     });
     var nodes1 = svg.append("g").attr("id", "nodes").selectAll("g.node")
         .data(nodes, function(d) {
-            return d.id || (d.id = ++i);
+            return d.id || (d.id = changei(i+1));
         });
     var elemEnter = nodes1.enter()
         .append("g")
@@ -228,6 +232,7 @@ function pause(){
     }
     console.log(paused+"=");
 }
+window.pause=pause;
 var ans=[];
 
 function demo(){
@@ -235,7 +240,7 @@ if(paused==1)return;
 console.log(i);
 visitElement(ans[i],animX1);
 d3.select("#traversal").append("text").text(ans[i].name + " ");
-i++;
+changei(i+1);
 if(i==ans.length)clearInterval(dem);
 if(i!=ans.length){
 clearInterval(dem);
@@ -253,7 +258,7 @@ function innorder(root){
             innorder(root.children[1])
     }
 }
-function recursiveInorder(root) {
+export function recursiveInorder(root) {
     ans=[];
     innorder(root);
     console.log(ans);
@@ -270,7 +275,7 @@ function preeorder(root){
             preeorder(root.children[1])
     }
 }
-function recursivePreorder(root) {
+export function recursivePreorder(root) {
     ans=[];
     preeorder(root);
     console.log(ans);
@@ -293,7 +298,7 @@ function posttorder(root){
 
 }
 
-function recursivePostorder(root) {
+export function recursivePostorder(root) {
     ans=[];
     posttorder(root);
     console.log(ans);
@@ -304,3 +309,4 @@ function reset(){
    document.getElementById("startNext").innerHTML="Start";
    resetTraversal();
 }
+window.reset=reset;

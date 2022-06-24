@@ -1,3 +1,7 @@
+import { treeData } from "./data.js";
+import { tree_traversal,svg,root,i,changesvg,changeroot,changei} from "./globalvariables.js";
+import { togglecolors,preorder,postorder,inorder} from "./traversals.js";
+
 
 if(document.getElementById('inorder')){
     document.getElementById('inorder').style.visibility = 'hidden';}
@@ -10,27 +14,31 @@ if(document.getElementById('postorder')){
 
     
 //Code to generate a graph 
-function generateGraph(){
-    textTraversal=document.getElementById('tree');
+export function generateGraph(){
+    let textTraversal=document.getElementById('tree');
     d3.select("svg").remove();
-    svg = d3.select("#tree").append("svg")
+    changesvg(d3.select("#tree").append("svg")
     .attr("id","grap") 
     .attr("width", tree_traversal.width + tree_traversal.margin.right + tree_traversal.margin.left)
     .attr("height", tree_traversal.height + tree_traversal.margin.top + tree_traversal.margin.bottom)
     .attr('viewBox','-70 -15 700 530')
     .append("g")
-    .attr("transform", "translate(" + tree_traversal.margin.left + "," + tree_traversal.margin.top + ")");
+    .attr("transform", "translate(" + tree_traversal.margin.left + "," + tree_traversal.margin.top + ")"));
     var random=Math.floor(Math.random() * 100);  
     random=(random%treeData.length);
-    root= treeData[random];
+    changeroot(treeData[random]);
     update(treeData[random]);
-    if(document.getElementById("preorder"))preorder();
+    if(document.getElementById("preorder")){
+        resetTraversal();
+        preorder();
+    }
     if(document.getElementById("bft"))bft();
 }
 
+
       
 //Resetting all variables and browser elements   
-function resetTraversal() {
+export function resetTraversal() {
     tree_traversal.error = 0;
     document.getElementById("commentbox").style.display = "none";
     document.getElementById("generate").disabled=false;
@@ -43,7 +51,7 @@ function resetTraversal() {
     }
 
     if (tree_traversal.disabled_ids.length > 0) {
-        for (i = 0; i < tree_traversal.disabled_ids.length; i++) {
+        for (changei(0); i < tree_traversal.disabled_ids.length; changei(i+1)) {
             document.getElementById(tree_traversal.disabled_ids[i]).style.pointerEvents = 'auto';
         }
         tree_traversal.disabled_ids = []
@@ -53,7 +61,7 @@ function resetTraversal() {
     selected_nodes = [];
     prev_selected_node = null;
     nodeElements = [];
-    index = -1;
+
     document.getElementById("traversal").innerHTML = "";
     document.getElementById("comments").innerHTML = "";
     d3.selectAll(".node")
@@ -78,12 +86,13 @@ function resetTraversal() {
         document.getElementById("bft").style.borderColor = "#3297CF";
     }
 }
+window.resetTraversal=resetTraversal;
 
 
      
     
 //Submitting by comparing the user's clicks and the actual answer 
-function submit(){
+export function submit(){
     // Comparing and checking the equality of the two lists 
     if(selected_nodes.length!==tree_traversal.sequence_list.length){
         tree_traversal.error=1;
@@ -108,16 +117,18 @@ function submit(){
         document.getElementById("traversal").innerHTML = selected_nodes.toString();
     } 
     }
+window.submit=submit
 
 // Function that checks what the user clicks on a node  and pushes it  into a list
-function checkClick(d){
+export function checkClick(d){
     selected_nodes.push(d.name);
     nodeElements.push(d);
     prev_selected_node = d;
     visitElement(d, 0);
 }
+
 //The undo function that undoes the button the user just clicked 
-function undo(){
+export function undo(){
     if(selected_nodes.length>0){
         if(sameElement(prev_selected_node)===true){
             selected_nodes.pop();
@@ -133,8 +144,9 @@ function undo(){
         }
     }
 }
+window.undo=undo;
 
-function update(root) {
+export function update(root) {
     resetTraversal();
     var nodes = tree_traversal.tree.nodes(root).reverse(),
         links = tree_traversal.tree.links(nodes);
@@ -143,7 +155,7 @@ function update(root) {
     });
     var nodes1 = svg.append("g").attr("id", "nodes").selectAll("g.node")
         .data(nodes, function(d) {
-            return d.id || (d.id = ++i);
+            return d.id || (d.id = changei(i+1));
         });
 
     var elemEnter = nodes1.enter()
@@ -201,7 +213,7 @@ function update(root) {
 }
 
 // The function that stores if two objects have the same data or not 
-const haveSameData = function(obj1, obj2) {
+export const haveSameData = function(obj1, obj2) {
     const obj1Length = Object.keys(obj1).length;
     const obj2Length = Object.keys(obj2).length;
 
@@ -215,13 +227,12 @@ const haveSameData = function(obj1, obj2) {
 
 //function that checks if the list of selected nodes contains similar nodes 
 
-const sameElement = function(element){
+export const sameElement = function(element){
     let count = 0;
     for(let i = 0;i<nodeElements.length;i++){
         if(haveSameData(nodeElements[i],element)===true){
             count++;
         }
-        console.log(count);
         if(count > 1){
             return true;
         }
@@ -231,7 +242,7 @@ const sameElement = function(element){
 }
 
 // A function that adds the colour to the node when clicked   
-function visitElement(element, animX) {
+export function visitElement(element, animX) {
     document.getElementById("undo").disabled = false;
     document.getElementById("undo").style.color = '#FFFFFF';
     let len = nodeElements.length;
@@ -252,7 +263,7 @@ function visitElement(element, animX) {
 
 
 //The function that performs the removal of colour from a node for the undo function 
-function clearElement(element, animX) {
+export function clearElement(element, animX) {
     document.getElementById("undo").style.color = '#404040'; 
     d3.select("#node-" + element.id)
         .transition().duration(tree_traversal.animDuration).delay(tree_traversal.animDuration * animX)
@@ -264,7 +275,7 @@ function clearElement(element, animX) {
 }
     
 // Performs the bft   
-function bft() {
+export function bft() {
     resetTraversal();
     document.getElementById("bft").style.backgroundColor = '#97CB3B';
     document.getElementById("bft").style.color = '#000000';
@@ -284,53 +295,24 @@ function bft() {
         }
     }
 }
-var animX1=0;
+ var animX1=0;
     
     
-//Inorder traversal  
-function recursiveInorder(root) {
-    if (root !== undefined) {
-        if (root.children !== undefined)
-            recursiveInorder(root.children[0])
-            tree_traversal.sequence_list.push(root.name);
-        if (root.children !== undefined)
-            recursiveInorder(root.children[1])
-    }
-}
-
-//Preorder traversal 
-function recursivePreorder(root) {
-    if (root !== undefined) {
-    tree_traversal.sequence_list.push(root.name);
-        if (root.children !== undefined)
-            recursivePreorder(root.children[1])
-        if (root.children !== undefined)
-            recursivePreorder(root.children[0])
-    }
-}
-//PostOrder traversal 
-function recursivePostorder(root) {
-    if (root !== undefined) {
-        if (root.children !== undefined)
-            recursivePostorder(root.children[0])
-        if (root.children !== undefined)
-            recursivePostorder(root.children[1])
-            tree_traversal.sequence_list.push(root.name)
-    }
-}
     
-function generateG(){
+export function generateG(){
     resetTraversal();
     generateGraph();
     if(document.getElementById("preorder"))preorder();
     if(document.getElementById("bft"))bft();
 }
-function reset(){
+window.generateG=generateG;
+export function reset(){
     resetTraversal();
     if(document.getElementById("preorder"))preorder();
     if(document.getElementById("bft"))bft();
 }
+window.reset=reset;
 
-generateGraph()
 
-generateGraph()
+ generateGraph()
+

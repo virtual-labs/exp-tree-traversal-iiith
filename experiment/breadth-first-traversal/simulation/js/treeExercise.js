@@ -1,3 +1,8 @@
+import { treeData } from "./data.js";
+import { tree_traversal,svg,root,i,changesvg,changeroot,changei} from "./globalvariables.js";
+import { togglecolors,preorder,postorder,inorder} from "./traversals.js";
+
+
 if(document.getElementById('inorder')){
 document.getElementById('inorder').style.visibility = 'hidden';}
 if(document.getElementById('postorder')){
@@ -10,18 +15,18 @@ let prev_selected_node = null;
 
 //Code to generate a graph
 function generateGraph(){
-    textTraversal=document.getElementById('tree');
+    let textTraversal=document.getElementById('tree');
     d3.select("svg").remove();
-    svg = d3.select("#tree").append("svg")
+    changesvg(d3.select("#tree").append("svg")
     .attr("id","grap") 
     .attr("width", tree_traversal.width + tree_traversal.margin.right + tree_traversal.margin.left)
     .attr("height", tree_traversal.height + tree_traversal.margin.top + tree_traversal.margin.bottom)
     .attr('viewBox','-70 -15 700 530')
     .append("g")
-    .attr("transform", "translate(" + tree_traversal.margin.left + "," + tree_traversal.margin.top + ")");
+    .attr("transform", "translate(" + tree_traversal.margin.left + "," + tree_traversal.margin.top + ")"));
     var random=Math.floor(Math.random() * 100);  
     random=(random%treeData.length);
-    root= treeData[random];
+    changeroot(treeData[random]);
     update(treeData[random]);
     if(document.getElementById("preorder"))preorder();
     if(document.getElementById("bft"))bft();
@@ -43,7 +48,7 @@ function resetTraversal() {
     }
 
     if (tree_traversal.disabled_ids.length > 0) {
-        for (i = 0; i < tree_traversal.disabled_ids.length; i++) {
+        for (changei(0); i < tree_traversal.disabled_ids.length; changei(i+1)) {
             document.getElementById(tree_traversal.disabled_ids[i]).style.pointerEvents = 'auto';
         }
         tree_traversal.disabled_ids = []
@@ -53,7 +58,7 @@ function resetTraversal() {
     selected_nodes = [];
     prev_selected_node = null;
     nodeElements = [];
-    index = -1;
+
     document.getElementById("traversal").innerHTML = "";
     document.getElementById("comments").innerHTML = "";
     d3.selectAll(".node")
@@ -105,6 +110,7 @@ function submit(){
        
     } 
     }
+    window.submit=submit;
     
 // Function that checks what the user clicks on a node  and pushes it  into a list
 function check(d){
@@ -130,6 +136,7 @@ function undo(){
         }
     }
 }
+window.undo=undo;
 
 function update(root) {
     resetTraversal();
@@ -140,7 +147,7 @@ function update(root) {
     });
     var nodes1 = svg.append("g").attr("id", "nodes").selectAll("g.node")
         .data(nodes, function(d) {
-            return d.id || (d.id = ++i);
+            return d.id || (d.id = changei(i+1));
         });
 
     var elemEnter = nodes1.enter()
@@ -325,11 +332,13 @@ function generateG(){
     if(document.getElementById("preorder"))preorder();
     if(document.getElementById("bft"))bft();
 }
+window.generateG=generateG;
 function reset(){
     resetTraversal();
     if(document.getElementById("preorder"))preorder();
     if(document.getElementById("bft"))bft();
 }
+window.reset=reset;
 
 generateGraph()
 

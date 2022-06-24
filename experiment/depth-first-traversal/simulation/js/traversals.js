@@ -1,6 +1,40 @@
-function postorder() {
-    animX1=0;
-    resetTraversal();
+
+import { tree_traversal,root, } from "./globalvariables.js";
+
+//Inorder traversal  
+export function recursiveInorder(root) {
+  if (root !== undefined) {
+      if (root.children !== undefined)
+          recursiveInorder(root.children[0])
+          tree_traversal.sequence_list.push(root.name);
+      if (root.children !== undefined)
+          recursiveInorder(root.children[1])
+  }
+}
+
+//Preorder traversal 
+export function recursivePreorder(root) {
+  if (root !== undefined) {
+  tree_traversal.sequence_list.push(root.name);
+      if (root.children !== undefined)
+          recursivePreorder(root.children[1])
+      if (root.children !== undefined)
+          recursivePreorder(root.children[0])
+  }
+}
+//PostOrder traversal 
+export function recursivePostorder(root) {
+  if (root !== undefined) {
+      if (root.children !== undefined)
+          recursivePostorder(root.children[0])
+      if (root.children !== undefined)
+          recursivePostorder(root.children[1])
+          tree_traversal.sequence_list.push(root.name)
+  }
+}
+export function postorder() {
+    let  animX1=0;
+
     tree_traversal.traversal_selected = true;
    togglecolors("postorder","preorder","inorder");
     recursivePostorder(root);
@@ -9,9 +43,9 @@ function postorder() {
 
 
 
-function preorder() {
-  animX1=0;
-  resetTraversal();
+export function preorder() {
+  let animX1=0;
+
   tree_traversal.traversal_selected = true;
   togglecolors("preorder","postorder","inorder");
   recursivePreorder(root);
@@ -20,9 +54,9 @@ function preorder() {
 
 
 
-  function inorder() {
-    animX1=0;
-    resetTraversal();
+ export function inorder() {
+    let animX1=0;
+  
     tree_traversal.traversal_selected = true;
     togglecolors("inorder","preorder","postorder");
     recursiveInorder(root);
@@ -32,7 +66,7 @@ function preorder() {
 
 
 
-function togglecolors(traversal1,traversal2,traversal3)
+export function togglecolors(traversal1,traversal2,traversal3)
 {
     if(document.getElementById("generate")){
       document.getElementById("generate").disabled=true;
