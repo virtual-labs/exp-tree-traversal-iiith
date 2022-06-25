@@ -41,7 +41,7 @@ function startNext(){
         else{bft();}
             flag_started=1;
     }
-    else{console.log("next");
+    else{
         if(i==ans.length)return;
         visitElement(ans[i],animX1);
         d3.select("#traversal").append("text").text(ans[i].name + " ");
@@ -199,7 +199,7 @@ function bft() {
     }
 
     document.getElementById("reset").disabled=false;
-    console.log(ans);
+
     dem=setInterval(demo,2000);
 }
 
@@ -230,14 +230,13 @@ function pause(){
         paused=0;
         document.getElementById("pause").innerHTML="pause";
     }
-    console.log(paused+"=");
+
 }
 window.pause=pause;
 var ans=[];
 
 function demo(){
 if(paused==1)return;
-console.log(i);
 visitElement(ans[i],animX1);
 d3.select("#traversal").append("text").text(ans[i].name + " ");
 changei(i+1);
@@ -261,7 +260,6 @@ function innorder(root){
 export function recursiveInorder(root) {
     ans=[];
     innorder(root);
-    console.log(ans);
     dem=setInterval(demo,2000);
 }
 function preeorder(root){
@@ -278,7 +276,6 @@ function preeorder(root){
 export function recursivePreorder(root) {
     ans=[];
     preeorder(root);
-    console.log(ans);
     dem=setInterval(demo,2000);
 }
 
@@ -301,7 +298,6 @@ function posttorder(root){
 export function recursivePostorder(root) {
     ans=[];
     posttorder(root);
-    console.log(ans);
     dem=setInterval(demo,2000);
 }
 

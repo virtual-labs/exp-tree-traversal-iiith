@@ -4,7 +4,6 @@ import { togglecolors,preorder,postorder,inorder} from "./traversals.js";
 
 let index = 0;
 function change(){
-  console.log("inchange");
  // document.getElementById("startNext").innerHTML="Start";
   resetTraversal();    
   if(document.getElementById("trav")){
@@ -28,7 +27,7 @@ window.resetTraversal;
     .attr("transform", "translate(" + tree_traversal.margin.left + "," + tree_traversal.margin.top + ")"));
     var random=Math.floor(Math.random() * 100);  
     random=(random%treeData.length);
-    console.log(random);
+    
     changeroot(treeData[random]);
     update(treeData[random]);
     
@@ -37,8 +36,7 @@ window.resetTraversal;
     if(document.getElementById("trav").value=="inorder")inorder();
     if(document.getElementById("trav").value=="preorder")preorder();
     if(document.getElementById("trav").value=="postorder")postorder();            
-    }
-    console.log("gk");  
+    } 
   tree_traversal.traversal_selected==true;
   }
   }
@@ -120,7 +118,6 @@ function resetTraversal()
     document.getElementById("inorder").style.color = '#FFFFFF';
     document.getElementById("postorder").style.color = '#FFFFFF';
     document.getElementById("preorder").style.color = '#FFFFFF';
-    console.log("changinggg colorrr");
   }
   else if(document.getElementById("bft")) 
   {
@@ -205,10 +202,8 @@ function visitElement(element,animX){
     queue.push(root);
       while(queue.length!==0)
       {
-        console.log(queue);
         var element = queue.shift();
         tree_traversal.sequence_list.push(element.name);
-        console.log(tree_traversal.sequence_list)
         if(element.children!==undefined)
         {
           for(var i=0; i<element.children.length; i++)
@@ -227,7 +222,6 @@ function recursiveInorder(root){
     if(root.children!==undefined)
       recursiveInorder(root.children[0])
    tree_traversal.sequence_list.push(root.name);
-   console.log("called",tree_traversal.sequence_list);
     
     if(root.children!==undefined)
       recursiveInorder(root.children[1])
@@ -236,7 +230,6 @@ function recursiveInorder(root){
 
 function recursivePreorder(root)
 {
-  console.log("called",root)
   if(root!==undefined)
   {
     tree_traversal.sequence_list.push(root.name);
@@ -248,7 +241,6 @@ function recursivePreorder(root)
 }
 function recursivePostorder(root)
 {
-  console.log("called",root)
   if(root!==undefined)
   {  
     if(root.children!==undefined)
