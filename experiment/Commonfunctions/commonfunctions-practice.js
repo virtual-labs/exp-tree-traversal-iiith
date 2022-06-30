@@ -1,24 +1,27 @@
-import { treeData } from "./data.js";
-import { tree_traversal,svg,root,i,changesvg,changeroot,changei} from "./globalvariables.js";
-import { togglecolors,preorder,postorder,inorder} from "./traversals.js";
+import { treeData } from "../depth-first-traversal/simulation/js/data.js";
+import {tree_traversal,svg,root,i,changesvg,changeroot,changei} from "../depth-first-traversal/simulation/js/globalvariables.js";
+import { togglecolors,preorder,postorder,inorder}from "../depth-first-traversal/simulation/js/traversals.js"; 
 
 let index = 0;
+
 function change(){
+  
  // document.getElementById("startNext").innerHTML="Start";
   resetTraversal();    
   if(document.getElementById("trav")){
+  resetTraversal();
   if(document.getElementById("trav").value=="inorder")inorder();
   if(document.getElementById("trav").value=="preorder")preorder();
   if(document.getElementById("trav").value=="postorder")postorder();            
   }
 }
-window.resetTraversal;
+window.change = change;
 
-  function generateGraph()
+  export function generateGraph()
   {
     let textTraversal=document.getElementById('tree');
     d3.select("svg").remove();
-     changesvg(d3.select("#tree").append("svg")
+    changesvg(d3.select("#tree").append("svg")
     .attr("id","grap") 
     .attr("width", tree_traversal.width + tree_traversal.margin.right + tree_traversal.margin.left)
     .attr("height", tree_traversal.height + tree_traversal.margin.top + tree_traversal.margin.bottom)
@@ -27,16 +30,18 @@ window.resetTraversal;
     .attr("transform", "translate(" + tree_traversal.margin.left + "," + tree_traversal.margin.top + ")"));
     var random=Math.floor(Math.random() * 100);  
     random=(random%treeData.length);
-    
-    changeroot(treeData[random]);
+
+    changeroot( treeData[random]);
     update(treeData[random]);
     
   if(tree_traversal.traversal_selected==false){
     if(document.getElementById("trav")){
+      resetTraversal();
     if(document.getElementById("trav").value=="inorder")inorder();
     if(document.getElementById("trav").value=="preorder")preorder();
     if(document.getElementById("trav").value=="postorder")postorder();            
-    } 
+    }
+
   tree_traversal.traversal_selected==true;
   }
   }
@@ -75,7 +80,7 @@ function check(d){
 }
 
 
-function resetTraversal()
+export function resetTraversal()
 {
 
   document.getElementById("generate").disabled=false;
@@ -100,7 +105,7 @@ function resetTraversal()
   }
   tree_traversal.traversal_selected = false;
   tree_traversal.sequence_list=[]
-  index=-1;
+   index=-1;
   document.getElementById("traversal").innerHTML = "";
   document.getElementById("comments").innerHTML = "";
   d3.selectAll(".node")
@@ -118,6 +123,7 @@ function resetTraversal()
     document.getElementById("inorder").style.color = '#FFFFFF';
     document.getElementById("postorder").style.color = '#FFFFFF';
     document.getElementById("preorder").style.color = '#FFFFFF';
+  
   }
   else if(document.getElementById("bft")) 
   {
@@ -127,7 +133,6 @@ function resetTraversal()
   if(!document.getElementById("trav")){bft();}
   
 }
-window.resetTraversal=resetTraversal;
 function update(root) 
 {
   resetTraversal();
@@ -204,6 +209,7 @@ function visitElement(element,animX){
       {
         var element = queue.shift();
         tree_traversal.sequence_list.push(element.name);
+ 
         if(element.children!==undefined)
         {
           for(var i=0; i<element.children.length; i++)
@@ -217,41 +223,6 @@ function visitElement(element,animX){
 
 
 var animX1=0;
-function recursiveInorder(root){ 
-  if(root!==undefined){
-    if(root.children!==undefined)
-      recursiveInorder(root.children[0])
-   tree_traversal.sequence_list.push(root.name);
-    
-    if(root.children!==undefined)
-      recursiveInorder(root.children[1])
-  }
-}
-
-function recursivePreorder(root)
-{
-  if(root!==undefined)
-  {
-    tree_traversal.sequence_list.push(root.name);
-    if(root.children!==undefined)
-      recursivePreorder(root.children[0])
-    if(root.children!==undefined)
-      recursivePreorder(root.children[1])
-  }
-}
-function recursivePostorder(root)
-{
-  if(root!==undefined)
-  {  
-    if(root.children!==undefined)
-      recursivePostorder(root.children[0]) 
-    if(root.children!==undefined)
-      recursivePostorder(root.children[1])
-     tree_traversal.sequence_list.push(root.name)
-  }
-}
-
-
 
 function generateG(){
   resetTraversal();

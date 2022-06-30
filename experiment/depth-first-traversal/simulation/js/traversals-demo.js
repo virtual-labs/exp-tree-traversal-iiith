@@ -1,4 +1,4 @@
-import { resetTraversal,recursiveInorder,recursivePostorder,recursivePreorder } from "./main-demo.js";
+import { resetTraversal,recursiveInorder,recursivePostorder,recursivePreorder } from "../../../Commonfunctions/commonfunctions-demo.js"
 import { tree_traversal,root } from "./globalvariables.js";
 
 

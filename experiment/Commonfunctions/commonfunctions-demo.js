@@ -1,6 +1,7 @@
-import { treeData } from "./data.js";
-import { tree_traversal,svg,root,i,changesvg,changeroot,changei} from "./globalvariables.js";
-import { togglecolors,preorder,postorder,inorder} from "./traversals-demo.js";
+import { treeData } from "../depth-first-traversal/simulation/js/data.js";
+import {tree_traversal,svg,root,i,changesvg,changeroot,changei} from "../depth-first-traversal/simulation/js/globalvariables.js";
+import { togglecolors,preorder,postorder,inorder}from "../depth-first-traversal/simulation/js/traversals-demo.js"; 
+
 
 let index = 0;
 
@@ -310,3 +311,5 @@ function reset(){
    resetTraversal();
 }
 window.reset = reset;
+
+

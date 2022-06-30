@@ -1,4 +1,4 @@
-
+import { resetTraversal } from "../../../Commonfunctions/commonfunctions-exercise.js";
 import { tree_traversal,root, } from "./globalvariables.js";
 
 //Inorder traversal  
@@ -45,7 +45,7 @@ export function postorder() {
 
 export function preorder() {
   let animX1=0;
-
+  tree_traversal.sequence_list=[];
   tree_traversal.traversal_selected = true;
   togglecolors("preorder","postorder","inorder");
   recursivePreorder(root);
