@@ -22,11 +22,11 @@ export let tree_traversal = new tree_traversal1();
 export   var i=0;
 export  let svg;
 
-export function changesvg(newvalue){
+export function changeSvg(newvalue){
   svg = newvalue;
 }
 
-export function changeroot(newvalue){
+export function changeRoot(newvalue){
   root = newvalue;
 }
 

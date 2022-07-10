@@ -1,5 +1,8 @@
+"use strict";
 import { treeData } from "../depth-first-traversal/simulation/js/data.js";
-import {tree_traversal,svg,root,i,changesvg,changeroot,changei} from "../depth-first-traversal/simulation/js/globalvariables.js";
+
+import {tree_traversal,svg,root,i,changeSvg,changeRoot,changei} from "../depth-first-traversal/simulation/js/globalvariables.js";
+
 import {preorder} from "../depth-first-traversal/simulation/js/traversals.js"; 
 
 if(document.getElementById('inorder')){
@@ -65,7 +68,7 @@ export function generateGraph(){
     
     let textTraversal=document.getElementById('tree');
     d3.select("svg").remove();
-    changesvg(d3.select("#tree").append("svg")
+    changeSvg(d3.select("#tree").append("svg")
     .attr("id","grap") 
     .attr("width", tree_traversal.width + tree_traversal.margin.right + tree_traversal.margin.left)
     .attr("height", tree_traversal.height + tree_traversal.margin.top + tree_traversal.margin.bottom)
@@ -74,7 +77,7 @@ export function generateGraph(){
     .attr("transform", "translate(" + tree_traversal.margin.left + "," + tree_traversal.margin.top + ")"));
     var random=Math.floor(Math.random() * 100);  
     random=(random%treeData.length);
-    changeroot(treeData[random]);
+    changeRoot(treeData[random]);
     update(treeData[random]);
     if(document.getElementById("preorder")){
   
@@ -86,8 +89,9 @@ export function generateGraph(){
 }
 
 export function submit(){
+    let clicked_Nodes = Array.from(node_map.values());
     // Comparing and checking the equality of the two lists 
-    if( Array.from(node_map.values()).length!==tree_traversal.sequence_list.length){
+    if(clicked_Nodes.length!==tree_traversal.sequence_list.length){
 
 
        tree_traversal.error=1;
@@ -95,9 +99,9 @@ export function submit(){
        
    }else{
 
-   for(let i=0; i<Array.from(node_map.values()).length; i++){
+   for(let i=0; i<clicked_Nodes.length; i++){
        
-       if(Array.from(node_map.values())[i]!=tree_traversal.sequence_list[i]){
+       if(clicked_Nodes[i]!=tree_traversal.sequence_list[i]){
            tree_traversal.error=1;
            break;
        }
@@ -106,12 +110,12 @@ export function submit(){
    if(tree_traversal.error===1){
        document.getElementById("commentbox").style.display = "block";
        document.getElementById("comments").innerHTML = 'Traversal Complete.Your Traversal is incorrect.Try again! \n Re-attempt practice section.'
-       document.getElementById("traversal").innerHTML = Array.from(node_map.values()).toString();
+       document.getElementById("traversal").innerHTML = clicked_Nodes.toString();
    }
    else{
        document.getElementById("commentbox").style.display = "block";
        document.getElementById("comments").innerHTML = 'Traversal Complete.Your Traversal is correct!'
-       document.getElementById("traversal").innerHTML = Array.from(node_map.values()).toString();
+       document.getElementById("traversal").innerHTML = clicked_Nodes.toString();
    } 
   
  
@@ -121,6 +125,7 @@ window.submit=submit;
 // Function that checks what the user clicks on a node  and pushes it  into a list
 export function checkClick(d){
    node_map.set(d,d.name);
+   console.log(node_map);
    prev_selected_node = d;
    visitElement(d, 0);
 }
@@ -155,9 +160,10 @@ export const haveSameData = function(obj1, obj2) {
 //function that checks if the list of selected nodes contains a particular node
 
 export const sameElement = function(element){
+    let keys = node_map.keys()
     let count = 0;
-    for(let i = 0;i<Array.from(node_map.keys());i++){
-        if(haveSameData(Array.from(node_map.keys())[i],element)===true){
+    for(let i = 0;i<keys.length;i++){
+        if(haveSameData(keys[i],element)===true){
             count++;
         }
         if(count > 1){
@@ -171,7 +177,7 @@ export const sameElement = function(element){
 
 // A function that adds the colour to the node when clicked   
 export function visitElement(element, animX) {
-    document.getElementById("undo").disabled = false;
+    //document.getElementById("undo").disabled = false;
     document.getElementById("undo").style.color = '#FFFFFF';
     let len = node_map.size;
     if(len!=1&&(sameElement(element))){

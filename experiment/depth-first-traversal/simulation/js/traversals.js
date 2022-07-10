@@ -1,4 +1,4 @@
-import { resetTraversal } from "../../../Commonfunctions/commonfunctions-exercise.js";
+import { resetTraversal } from "../../../Commonfunctions/exercise-utils.js";
 import { tree_traversal,root, } from "./globalvariables.js";
 
 //Inorder traversal  

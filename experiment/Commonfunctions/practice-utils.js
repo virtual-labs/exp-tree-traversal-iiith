@@ -1,5 +1,9 @@
+"use strict";
+
 import { treeData } from "../depth-first-traversal/simulation/js/data.js";
-import {tree_traversal,svg,root,i,changesvg,changeroot,changei} from "../depth-first-traversal/simulation/js/globalvariables.js";
+
+import {tree_traversal,svg,root,i,changeSvg,changeRoot,changei} from "../depth-first-traversal/simulation/js/globalvariables.js";
+
 import { togglecolors,preorder,postorder,inorder}from "../depth-first-traversal/simulation/js/traversals.js"; 
 
 let index = 0;
@@ -7,7 +11,7 @@ let index = 0;
 function change(){
   
  // document.getElementById("startNext").innerHTML="Start";
-  resetTraversal();    
+  //resetTraversal();    
   if(document.getElementById("trav")){
   resetTraversal();
   if(document.getElementById("trav").value=="inorder")inorder();
@@ -21,7 +25,7 @@ window.change = change;
   {
     let textTraversal=document.getElementById('tree');
     d3.select("svg").remove();
-    changesvg(d3.select("#tree").append("svg")
+    changeSvg(d3.select("#tree").append("svg")
     .attr("id","grap") 
     .attr("width", tree_traversal.width + tree_traversal.margin.right + tree_traversal.margin.left)
     .attr("height", tree_traversal.height + tree_traversal.margin.top + tree_traversal.margin.bottom)
@@ -31,7 +35,7 @@ window.change = change;
     var random=Math.floor(Math.random() * 100);  
     random=(random%treeData.length);
 
-    changeroot( treeData[random]);
+    changeRoot( treeData[random]);
     update(treeData[random]);
     
   if(tree_traversal.traversal_selected==false){
@@ -105,7 +109,7 @@ export function resetTraversal()
   }
   tree_traversal.traversal_selected = false;
   tree_traversal.sequence_list=[]
-   index=-1;
+  index=-1;
   document.getElementById("traversal").innerHTML = "";
   document.getElementById("comments").innerHTML = "";
   d3.selectAll(".node")

@@ -1,5 +1,8 @@
+"use strict";
 import { treeData } from "../depth-first-traversal/simulation/js/data.js";
-import {tree_traversal,svg,root,i,changesvg,changeroot,changei} from "../depth-first-traversal/simulation/js/globalvariables.js";
+
+import {tree_traversal,svg,root,i,changeSvg,changeRoot,changei} from "../depth-first-traversal/simulation/js/globalvariables.js";
+
 import { togglecolors,preorder,postorder,inorder}from "../depth-first-traversal/simulation/js/traversals-demo.js"; 
 
 
@@ -21,14 +24,14 @@ var paused=0;
 var dem;
 var flag_started=0;
 
-changesvg(d3.select("#tree").append("svg")
+changeSvg(d3.select("#tree").append("svg")
   .attr("id","grap")
   .attr("width", tree_traversal.width + tree_traversal.margin.right + tree_traversal.margin.left)
   .attr("height", tree_traversal.height + tree_traversal.margin.top + tree_traversal.margin.bottom)
   .attr('viewBox','-70 -15 700 500')
   .append("g")
   .attr("transform", "translate(" + tree_traversal.margin.left + "," + tree_traversal.margin.top + ")"));
-changeroot(treeData[0]);
+changeRoot(treeData[0]);
 update(treeData[0]);
 
 document.getElementById("startNext").innerHTML="Start";
