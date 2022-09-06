@@ -1,4 +1,4 @@
-var treeData = [ {
+export var treeData = [ {
 	"name":"7",
 	children:[  
 	{ "name":"6"  , children:[{ "name":"4"},{ "name":"3"}]},

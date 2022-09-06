@@ -1,27 +1,37 @@
+"use strict";
+import { treeData } from "../depth-first-traversal/simulation/js/data.js";
+
+import {tree_traversal,svg,root,i,changeSvg,changeRoot,changei} from "../depth-first-traversal/simulation/js/globalvariables.js";
+
+import { togglecolors,preorder,postorder,inorder}from "../depth-first-traversal/simulation/js/traversals-demo.js"; 
+
+
+let index = 0;
+
 function change(){
-    document.getElementById("startNext").innerHTML="Next";
-    resetTraversal(); 
+    document.getElementById("startNext").innerHTML="Next"; 
     if(document.getElementById("trav")){
-     
+    resetTraversal();
     if(document.getElementById("trav").value=="inorder")inorder();
     if(document.getElementById("trav").value=="preorder")preorder();
     if(document.getElementById("trav").value=="postorder")postorder();            
 }
 }
+window.change = change;
 
 
 var paused=0;
 var dem;
 var flag_started=0;
-var i=0;
-svg = d3.select("#tree").append("svg")
+
+changeSvg(d3.select("#tree").append("svg")
   .attr("id","grap")
   .attr("width", tree_traversal.width + tree_traversal.margin.right + tree_traversal.margin.left)
   .attr("height", tree_traversal.height + tree_traversal.margin.top + tree_traversal.margin.bottom)
   .attr('viewBox','-70 -15 700 500')
   .append("g")
-  .attr("transform", "translate(" + tree_traversal.margin.left + "," + tree_traversal.margin.top + ")");
-root= treeData[0];
+  .attr("transform", "translate(" + tree_traversal.margin.left + "," + tree_traversal.margin.top + ")"));
+changeRoot(treeData[0]);
 update(treeData[0]);
 
 document.getElementById("startNext").innerHTML="Start";
@@ -29,7 +39,7 @@ function startNext(){
     document.getElementById("startNext").innerHTML="Next";
     if(flag_started==0){
         if(document.getElementById("trav")){
-  
+        resetTraversal();
         if(document.getElementById("trav").value=="inorder")inorder();
         if(document.getElementById("trav").value=="preorder")preorder();
         if(document.getElementById("trav").value=="postorder")postorder();            
@@ -38,21 +48,24 @@ function startNext(){
         else{bft();}
             flag_started=1;
     }
-    else{console.log("next");
+    else{
+
+  
         if(i==ans.length)return;
         visitElement(ans[i],animX1);
         d3.select("#traversal").append("text").text(ans[i].name + " ");
-        i++;
+        changei(i+1);
         if(i==ans.length)clearInterval(dem);}
 }
-  function resetTraversal() {
-    i=0;
+window.startNext=startNext;
+  export function resetTraversal() {
+    changei(0);
     paused=0;
     document.getElementById("pause").innerHTML="pause";
     ans=[];
     flag_started=0; 
     if(dem){clearInterval(dem);}
-    textTraversal = document.getElementById('traversal');
+    let textTraversal = document.getElementById('traversal');
     while (textTraversal.firstChild) {
         textTraversal.removeChild(textTraversal.firstChild);
     }
@@ -85,7 +98,6 @@ function startNext(){
 }
 
 function visitElement(element, animX) {
-   
     tree_traversal.animDuration=0;
         d3.select("#node-" + element.id)
         .transition().duration(tree_traversal.animDuration).delay(tree_traversal.animDuration * animX)
@@ -102,7 +114,7 @@ function update(root) {
     });
     var nodes1 = svg.append("g").attr("id", "nodes").selectAll("g.node")
         .data(nodes, function(d) {
-            return d.id || (d.id = ++i);
+            return d.id || (d.id = changei(i+1));
         });
     var elemEnter = nodes1.enter()
         .append("g")
@@ -195,7 +207,6 @@ function bft() {
     }
 
     document.getElementById("reset").disabled=false;
-    console.log(ans);
     dem=setInterval(demo,2000);
 }
 
@@ -226,16 +237,15 @@ function pause(){
         paused=0;
         document.getElementById("pause").innerHTML="pause";
     }
-    console.log(paused+"=");
 }
+window.pause = pause;
 var ans=[];
 
 function demo(){
 if(paused==1)return;
-console.log(i);
 visitElement(ans[i],animX1);
 d3.select("#traversal").append("text").text(ans[i].name + " ");
-i++;
+changei(i+1);
 if(i==ans.length)clearInterval(dem);
 if(i!=ans.length){
 clearInterval(dem);
@@ -253,10 +263,9 @@ function innorder(root){
             innorder(root.children[1])
     }
 }
-function recursiveInorder(root) {
+export function recursiveInorder(root) {
     ans=[];
     innorder(root);
-    console.log(ans);
     dem=setInterval(demo,2000);
 }
 function preeorder(root){
@@ -270,10 +279,10 @@ function preeorder(root){
             preeorder(root.children[1])
     }
 }
-function recursivePreorder(root) {
+export function recursivePreorder(root) {
     ans=[];
     preeorder(root);
-    console.log(ans);
+
     dem=setInterval(demo,2000);
 }
 
@@ -293,10 +302,10 @@ function posttorder(root){
 
 }
 
-function recursivePostorder(root) {
+export function recursivePostorder(root) {
     ans=[];
     posttorder(root);
-    console.log(ans);
+
     dem=setInterval(demo,2000);
 }
 
@@ -304,3 +313,6 @@ function reset(){
    document.getElementById("startNext").innerHTML="Start";
    resetTraversal();
 }
+window.reset = reset;
+
+

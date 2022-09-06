@@ -17,7 +17,20 @@ class tree_traversal1{
         };
       };
 };
-let tree_traversal = new tree_traversal1();
-  var root;
-  var i=0;
-  var svg;
+export let tree_traversal = new tree_traversal1();
+ export  var root;
+export   var i=0;
+export  let svg;
+
+export function changesvg(newvalue){
+  svg = newvalue;
+}
+
+export function changeroot(newvalue){
+  root = newvalue;
+}
+
+export function changei(newvalue){
+  i = newvalue;
+  return i;
+}

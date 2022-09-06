@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="css/commonstyle.css"/>
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <link rel="stylesheet" type="text/css" href="css/hint_box.css"/>
-<link rel="stylesheet" href="../../assets/css/common-styles-responsive.css">
+<link rel="stylesheet" href="assets/css/common-styles-responsive.css">
 
 <body>
 <div class="instruction-box">
@@ -18,6 +18,7 @@
           for traversal.</li>
       <li>Click <b>Reset</b> to restart the current traversal.</li>
       <li>Click <b>New Graph</b> to generate a new graph.</li>
+
     </ul>
   </div>
 </div>
@@ -39,7 +40,7 @@ Perform a proper pseudo BFT traversal on the given graph. </p>
         <button id="reset" type="button" value="Reset" class="green" onclick="reset()">Reset</button>
         <button id="generategraph" type="button" value="Generate Graph" class="green button_input"  onclick="generateG()">New Graph</button>
         <button id="submit" type="button" value="submit" class="green button_input"  onclick="submit()">Submit</button>
-   
+        <button id="undo" type="button" value="undo" class="green button_input"  onclick="undo()">Undo</button>
     </div>
 
     <div id="tree">
@@ -50,20 +51,21 @@ Perform a proper pseudo BFT traversal on the given graph. </p>
   <div id="comments"></div>
   <div id="seq" >
      <div id="sequencelbl">
-       <b>Node Sequence:</b>
-       <div id="traversal"></div>
+       
      </div>
   </div>
 </div> 
+
+<div class="traversal-box" id="traversalbox" style="margin:auto;margin-top:32%;height:14vh;left:20%;">
+  <b>Node Sequence:</b>
+  <div id = "traversal"></div>
+  </div>
 
 <button id="generate" type="button" value="Generate Graph" class="green" onclick="generateGraph() " style="visibility: hidden">Generate</button>
 <button id="bft" type="button" value ="Breadth First" class="green" onclick="bft()" style="visibility: hidden">pseudo BFT</button>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
-<script src="js/data.js"></script>
-<script src="js/globalvariables.js"></script>
-<script src="js/treeExercise.js"></script>
-<script src="js/traversals.js"></script>
+<script type = "module" src="../../Commonfunctions/exercise-utils.js"></script>
 <script src="../../assets/js/instruction-box.js"></script>
 </body>

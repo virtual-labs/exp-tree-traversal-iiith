@@ -1,36 +1,10 @@
-import { tree_traversal,root, } from "./globalvariables.js";
-function recursiveInorder(root) {
-  if (root !== undefined) {
-      if (root.children !== undefined)
-          recursiveInorder(root.children[0])
-          tree_traversal.sequence_list.push(root.name);
-      if (root.children !== undefined)
-          recursiveInorder(root.children[1])
-  }
-}
-function recursivePreorder(root) {
-  if (root !== undefined) {
-     tree_traversal.sequence_list.push(root.name);
-      if (root.children !== undefined)
-          recursivePreorder(root.children[1])
-      if (root.children !== undefined)
-          recursivePreorder(root.children[0])
-  }
-}
-function recursivePostorder(root) {
-  if (root !== undefined) {
-      if (root.children !== undefined)
-          recursivePostorder(root.children[0])
-      if (root.children !== undefined)
-          recursivePostorder(root.children[1])
-          tree_traversal.sequence_list.push(root.name)
-  }
-}
+import { resetTraversal,recursiveInorder,recursivePostorder,recursivePreorder } from "../../../Commonfunctions/commonfunctions-demo.js";
+import { tree_traversal,root } from "./globalvariables.js";
 
 
 
 export function postorder() {
-    animX1=0;
+    let  animX1=0;
     resetTraversal();
     tree_traversal.traversal_selected = true;
    togglecolors("postorder","preorder","inorder");
@@ -41,7 +15,7 @@ export function postorder() {
 
 
 export function preorder() {
-  animX1=0;
+  let animX1=0;
   resetTraversal();
   tree_traversal.traversal_selected = true;
   togglecolors("preorder","postorder","inorder");
@@ -51,8 +25,8 @@ export function preorder() {
 
 
 
-export  function inorder() {
-    animX1=0;
+ export function inorder() {
+    let animX1=0;
     resetTraversal();
     tree_traversal.traversal_selected = true;
     togglecolors("inorder","preorder","postorder");
