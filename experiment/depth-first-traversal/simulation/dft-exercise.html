@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>Breadth First Traversals</title>
+<title>Depth First Traversal Exercise</title>
 <link rel="stylesheet" type="text/css" href="css/commonstyle.css"/>
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <link rel="stylesheet" type="text/css" href="css/hint_box.css"/>
-<link rel="stylesheet" href="../../assets/css/common-styles-responsive.css">
+<link rel="stylesheet" href="assets/css/common-styles-responsive.css">
+
+
 
 <body>
 <div class="instruction-box">
@@ -18,6 +20,7 @@
       traversal, before moving on to next traversal.</li>
       <li>Click <b>Submit</b> after completing each
       traversal to check</li>
+      <li>Click <b>Undo</b> to undo your <b>last action </b> - undoing your click of a node will be as if you never clicked it</li>
     </ul>
   </div>
 </div>
@@ -38,6 +41,7 @@
   <button id="reset" type="button" value="Reset" class="green button_input"  onclick="reset()">Reset</button>
   <button id="generategraph" type="button" value="Generate Graph" class="green button_input"  onclick="generateG()">New Graph</button>
   <button id="submit" type="button" value="submit" class="green button_input"  onclick="submit()">Submit</button>
+   <button id="undo" type="button" value="undo" class="green button_input"  onclick="undo()">Undo</button>
 </div>
 
     <div id="tree"></div>
@@ -47,22 +51,25 @@
   <div id="comments"></div>
   <div id="seq" >
     <div id="sequencelbl">
-      <b>Node Sequence:</b>
-      <div id="traversal"></div>
+      
     </div>
   </div>
 </div> 
+
+<div class="traversal-box" id="traversalbox" style="margin:auto;margin-top:32%;height:14vh;left:20%;">
+  <b>Node Sequence:</b>
+  <div id = "traversal"></div>
+  </div>
+
 
 <button id="postorder" type="button"  value="Postorder" class="green button_input"  onclick="postorder()">Postorder</button>
 <button id="generate" type="button" value="Generate Graph" class="green button_input"  onclick="generateGraph()" style="visibility: hidden">Generate Graph</button>
 <button id="preorder" type="button" value="Preorder" class="green button_input"  onclick="preorder()" style="visibility: hidden">Exorder</button>
 <button id="inorder" type="button" value="Inorder" class="green button_input"  onclick="inorder()">Inorder</button>
-    
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
-<script src="js/data.js"></script>
-<script src="js/globalvariables.js"></script>
-<script src="js/traversals.js"></script>
-<script src="js/treeExercise.js"></script>
+<script type = "module" src="../../Commonfunctions/exercise-utils.js"></script>
 <script src="../../assets/js/instruction-box.js"></script>
 </body>
