@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Breadth First Traversals</title>
+<link rel="stylesheet" type="text/css" href="css/commonstyle.css"/>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/hint_box.css"/>
+<link rel="stylesheet" href="assets/css/common-styles-responsive.css">
+
+<body>    
+<div class="instruction-box">
+  <button class="collapsible">Instructions</button>
+  <div class="content">
+    <ul>
+      <li>Click <b>New Graph</b> to generate a random graph.
+      <li>Select a traversal.</li>
+      <li>Click on the nodes in the correct sequence of
+      selected traversal.</li>
+      <li>Click <b>Reset</b> after completing each
+      traversal, before moving on to next traversal.</li>
+    </ul>
+  </div>
+</div>
+
+
+            <div class="hint_con" id="hint_con_1" style="display: none;">
+                <div id="hint_title">RESULT</div>
+                <div id="hint"></div>
+            </div>
+   
+     <div id="button-wrapper" class="buttons">
+        <select id="trav" onchange="change();"   
+        <option value="inorder" >-</option>
+        <option value="preorder" selected="selected">Preorder</option>
+            <option value="postorder" selected="selected">Postorder</option>
+            <option value="inorder" selected="selected">Inorder</option>
+            ></select>
+        <button id="generategraph" type="button" value="Generate Graph" class="green"  onclick="generateG()">New Graph</button>
+        <button id="reset" type="button" value="Reset" class="green"  onclick="change()">Reset</button>
+    </div>
+
+  
+    <div id="tree">        
+    </div>
+     
+
+<div class="comment-box comment_box" id="commentbox" style="margin:auto;margin-top:27%;height:12vh;left:-34%;">
+  <b>Observations</b>
+  <div id="comments"></div>
+  <div id="seq" >
+     <div id="sequencelbl"><b>Node Sequence:</b></div>
+     <div id="traversal"></div>
+  </div>
+</div> 
+        
+<button id="postorder" type="button"  value="Postorder" class="green"  onclick="postorder()" style="visibility: hidden;">Postorder</button>
+<button id="inorder" type="button" value="Inorder" class="green"  onclick="inorder()"style="visibility: hidden;">Inorder</button>
+<button id="preorder" type="button" value="Preorder" class="green"  onclick="preorder()"style="visibility: hidden;">Preorder</button>
+<button id="generate" type="button" value="Generate Graph" class="green"  onclick="generateG()"style="visibility: hidden;">New raph</button>
+        
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+<script type = "module" src="../../Commonfunctions/practice-utils.js"></script>
+<script src="../../assets/js/instruction-box.js"></script>
+<script src="../../assets/js/iframeResize.js"></script></body>

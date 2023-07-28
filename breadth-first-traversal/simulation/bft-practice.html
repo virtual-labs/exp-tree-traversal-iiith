@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Breadth First Traversals</title>
+<link rel="stylesheet" type="text/css" href="css/commonstyle.css"/>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/hint_box.css"/>
+<link rel="stylesheet" href="assets/css/common-styles-responsive.css"> 
+
+
+<body>
+<div class="instruction-box">
+  <button class="collapsible">Instructions</button>
+  <div class="content">
+    <ul>
+      <li>Perform a Breadth First Traversal.</li>
+      <li>Click on the nodes in the correct sequence of
+        a Breadth First Traversal.</li>
+        <li>Click on the text inside a circle to select that node
+          for traversal.</li>
+      <li>Click <b>Reset</b> to restart the current traversal.</li>
+      <li>Click <b>New Graph</b> to generate a new graph.</li>
+    </ul>
+  </div>
+</div>
+
+
+            <div class="hint_con" id="hint_con_1" style="display: none;">
+                <div id="hint_title">RESULT</div>
+                <div id="hint"></div>
+            </div>
+     
+        <div id="button-wrapper" class="buttons">
+        <button id="generategraph" type="button" value="Generate Graph" class="green" onclick="generateG()">New Graph</button>
+        <button id="reset" type="button" value="Reset" class="green" onclick="resetTraversal()">Reset</button>
+        </div>
+<div id="tree"></div>
+
+<div class="comment-box comment_box" id="commentbox" style="margin:auto;margin-top:27%;height:12vh;left:-34%;">
+  <b>Observations</b>
+  <div id="comments"></div>
+  <div id="seq" >
+     <div id="sequencelbl"><b>Node Sequence:</b></div>
+     <div id="traversal"></div>
+  </div>
+</div> 
+
+<button id="generate" type="button" value="Generate Graph" class="green" onclick="generateGraph()" style="visibility: hidden;">New Graph</button>
+<button id="bft" type="button" value="Breadth First" class="green" onclick="bft()" style="visibility: hidden">Breadth First</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+<script type = "module" src="../../Commonfunctions/practice-utils.js"></script>
+<script src="../../assets/js/instruction-box.js"></script>
+<script src="../../assets/js/iframeResize.js"></script></body>
