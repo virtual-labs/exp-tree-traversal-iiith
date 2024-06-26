@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Breadth First Traversals</title>
+<link rel="stylesheet" type="text/css" href="css/commonstyle.css"/>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/hint_box.css"/>
+<link rel="stylesheet" href="assets/css/common-styles-responsive.css">
+
+<div class="instruction-box">
+  <button class="collapsible">Instructions</button>
+  <div class="content">
+    <ul>
+      <li>Select the appropriate traversal button to
+      visualize it.</li>
+      <li>Click Reset after the selected traversal is
+      complete, before moving on to next traversal.</li>
+    </ul>
+  </div>
+</div>
+
+    <div id="button-wrapper" class="buttons">
+        <select id="trav" onchange="change();"   
+        <option value="inorder" selected="selected">Inorder</option>
+        <option value="preorder" selected="selected">Preorder</option>
+            <option value="postorder" selected="selected">Postorder</option>
+            <option value="inorder" selected="selected">Inorder</option>
+            
+            ></select>
+            <button id="reset" type="button" value="Reset" class="green"  onclick="reset()">Reset</button>
+            <button id="pause" type="button" value="Pause" class="green"  onclick="pause()">Pause</button>
+        <button id="startNext" value="start next" type ="button" class="green" onclick="startNext()">Breadth First</button>
+    </div>
+     
+
+<div id="tree"></div>
+
+<div class="comment-box" id="comment-box-bigger" style="margin:auto;margin-top:20%;height:12vh;">
+  <b>Observations</b>
+  <div id="seq" >
+  <div id="sequencelbl"><b>Node Sequence:</b></div>
+  <div id="traversal"><p></p></div>
+  </div>
+</div> 
+
+<center>
+  <div class="slidecontainer">
+    <p id="speed_adjust">
+      Min. Speed
+      <input id="speed" type="range" min="0" max="4000" class="slider slider_input">
+      Max. Speed
+    </p>
+  </div>
+</center>
+  
+<button id="postorder" type="button"  value="Postorder" class="green"  onclick="postorder()" style="visibility: hidden;">Postorder</button>
+<button id="inorder" type="button" value="Inorder" class="green"  onclick="inorder()"style="visibility: hidden;">Inorder</button>
+<button id="preorder" type="button" value="Preorder" class="green"  onclick="preorder()"style="visibility: hidden;">Preorder</button>
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+<script type = "module" src="../../Commonfunctions/demo-utils.js"></script>
+<script src="../../assets/js/instruction-box.js"></script>
+<script src="../../assets/js/iframeResize.js"></script></body>

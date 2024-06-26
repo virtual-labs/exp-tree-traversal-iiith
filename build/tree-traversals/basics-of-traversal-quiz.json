@@ -1,0 +1,52 @@
+{
+    "version": 2.0,
+    "questions": [
+        {
+            "question": "1. Which of the following is true?",
+            "answers": {
+                "a": "A tree can be traversed in a linear fashion like arrays.",
+                "b": "A tree can be traversed only in breadth first order",
+                "c": "A tree can be traversed only in depth first order",
+                "d": "A tree can be traversed in both breadth first and depth first order."
+            },
+            "correctAnswer": "d",
+            "explanations": {
+                "a": "Data of the tree is not stored in a linear fashion. Hence it cannot be traversed linearly.",
+                "b": "There are more ways to traverse a tree, including breadth first traversal.",
+                "c": "There are more ways to traverse a tree, including depth first traversal."
+            },
+            "difficulty": "beginner"
+        },
+        {
+            "question": "2. Which of the following is true about Breadth First Traversal?",
+            "answers": {
+                "a": "In breadth first traversal, nodes of the tree can be traversed in any manner",
+                "b": "In breadth first traversal, nodes of the tree are traversed level by level, left to right",
+                "c": "In breadth first traversal, nodes of the tree are traversed depth wise",
+                "d": "None of the above"
+            },
+            "correctAnswer": "b",
+            "explanations": {
+                "a": "No, a proper set of rules are followed while traversing a tree using breadth first traversal.",
+                "b": "Yes, direction can be from left to right, or from right to left, but should remain for the entire traversal.",
+                "c": "If nodes are traversed depth-wise, then it is depth first traversal"
+            },
+            "difficulty": "beginner"
+        },
+        {
+            "question": "3. Select an option which is TRUE?",
+            "answers": {
+                "a": "A traversal of a tree does not involve visiting all the nodes",
+                "b": "A traversal of a tree involves visiting all the nodes in the tree",
+                "c": "A search of a graph must visit all the nodes in the graph",
+                "d": "None of the above"
+            },
+            "correctAnswer": "a",
+            "explanations": {
+                "b": "Yes, traversing a tree means visiting each node in a specified order, covering all the nodes.",
+                "c": "Search will stop once the node is found. Hence visiting all the nodes will not be possible all the time."
+            },
+            "difficulty": "intermediate"
+        }
+    ]
+}
