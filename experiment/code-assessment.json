@@ -22,7 +22,8 @@
             ],
             "expected": [1, 2, 4, 5, 3, 6, 7],
             "inputs description": "Input is a binary tree represented as a nested dictionary. Each node has a value 'val' and pointers to its left and right children.",
-            "expected description": "An array representing the preorder traversal of the tree."
+            "expected description": "An array representing the preorder traversal of the tree.",
+            "difficulty": "intermediate"
         },
         {
             "problem name": "Inorder Traversal of a Binary Tree",
@@ -44,7 +45,8 @@
             ],
             "expected": [4, 2, 5, 1, 6, 3, 7],
             "inputs description": "Input is a binary tree represented as a nested dictionary. Each node has a value 'val' and pointers to its left and right children.",
-            "expected description": "An array representing the inorder traversal of the tree."
+            "expected description": "An array representing the inorder traversal of the tree.",
+            "difficulty": "intermediate"
         },
         {
             "problem name": "Postorder Traversal of a Binary Tree",
@@ -66,7 +68,8 @@
             ],
             "expected": [4, 5, 2, 6, 7, 3, 1],
             "inputs description": "Input is a binary tree represented as a nested dictionary. Each node has a value 'val' and pointers to its left and right children.",
-            "expected description": "An array representing the postorder traversal of the tree."
+            "expected description": "An array representing the postorder traversal of the tree.",
+            "difficulty": "intermediate"
         }
     ]
 }
