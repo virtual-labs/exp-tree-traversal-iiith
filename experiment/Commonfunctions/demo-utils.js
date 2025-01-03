@@ -246,7 +246,6 @@ function bft() {
       }
     }
   }
-
   document.getElementById('reset').disabled = false
   dem = setInterval(demo, 2000)
 }
@@ -353,7 +352,7 @@ export function recursivePostorder(root) {
 }
 
 function reset() {
-    document.getElementById('pause').innerHTML = 'Play'
+  document.getElementById('pause').innerHTML = 'Start'
   resetTraversal()
   paused=1
   started=0
