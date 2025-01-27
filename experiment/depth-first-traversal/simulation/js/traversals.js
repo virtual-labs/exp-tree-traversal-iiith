@@ -17,9 +17,9 @@ export function recursivePreorder(root) {
   if (root !== undefined) {
   tree_traversal.sequence_list.push(root.name);
       if (root.children !== undefined)
-          recursivePreorder(root.children[1])
-      if (root.children !== undefined)
           recursivePreorder(root.children[0])
+      if (root.children !== undefined)
+          recursivePreorder(root.children[1])
   }
 }
 //PostOrder traversal 
