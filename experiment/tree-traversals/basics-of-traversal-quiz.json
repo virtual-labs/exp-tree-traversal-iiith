@@ -41,10 +41,11 @@
                 "c": "A search of a graph must visit all the nodes in the graph",
                 "d": "None of the above"
             },
-            "correctAnswer": "a",
+            "correctAnswer": "b",
             "explanations": {
-                "b": "Yes, traversing a tree means visiting each node in a specified order, covering all the nodes.",
-                "c": "Search will stop once the node is found. Hence visiting all the nodes will not be possible all the time."
+                "a": " Traversal means visiting all nodes; skipping any node means it's not a valid tree traversal.",
+                "c": "Search will stop once the node is found. Hence visiting all the nodes will not be possible all the time.",
+                "d": "Incorrect because one of the given options is correct and directly contradicts this statement."
             },
             "difficulty": "intermediate"
         }
