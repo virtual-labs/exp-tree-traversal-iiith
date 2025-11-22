@@ -36,17 +36,22 @@
     order. So, he named this traversal X-order.Please
     traverse the following graph in X-order
 </p>
-    
-<div id="button-wrapper" class="buttons" style="top: 48vw !important;">
+
+<div id="tree"></div>
+
+<div id="button-wrapper" class="buttons">
   <button id="reset" type="button" value="Reset" class="green button_input"  onclick="reset()">Reset</button>
   <button id="generategraph" type="button" value="Generate Graph" class="green button_input"  onclick="generateG()">New Graph</button>
   <button id="submit" type="button" value="submit" class="green button_input"  onclick="submit()">Submit</button>
    <button id="undo" type="button" value="undo" class="green button_input"  onclick="undo()">Undo</button>
 </div>
 
-    <div id="tree"></div>
+<div class="traversal-box" id="traversalbox">
+  <b>Node Sequence:</b>
+  <div id = "traversal"></div>
+</div>
     
-<div class="comment-box comment_box" id="commentbox" style="margin:auto;margin-top:27%;height:14vh;left:-34%;">
+<div class="comment-box comment_box" id="commentbox">
   <b>Observations</b>
   <div id="comments"></div>
   <div id="seq" >
@@ -54,12 +59,7 @@
       
     </div>
   </div>
-</div> 
-
-<div class="traversal-box" id="traversalbox" style="margin:auto;margin-top:32%;height:14vh;left:20%;">
-  <b>Node Sequence:</b>
-  <div id = "traversal"></div>
-  </div>
+</div>
 
 
 <button id="postorder" type="button"  value="Postorder" class="green button_input"  onclick="postorder()">Postorder</button>
