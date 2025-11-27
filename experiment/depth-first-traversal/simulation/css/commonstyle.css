@@ -1,9 +1,10 @@
-html,body {
+html,
+body {
   font-family: Helvetica;
-  position:relative;
+  position: relative;
 }
 
-#title{
+#title {
   font-size: 20px;
   width: 60%;
   text-align: center;
@@ -12,33 +13,29 @@ html,body {
 }
 
 .buttons {
-  top:45vw;
   display: block;
   width: 100%;
+  max-width: 1000px;
   text-align: center;
-  position:relative;
-  overflow: auto;
-  z-index: 1;  
- }
-.buttons button{
+  position: relative;
   z-index: 1;
-  border-radius: 50vw;
-  width: 12%;
-  height: 7%;
+  margin: 20px auto;
+}
+.buttons button {
+  z-index: 1;
+  border-radius: 50px;
+  min-width: 120px;
   background-color: #288ec8;
   border: none;
   color: white;
-  padding: 1%;
+  padding: 12px 20px;
   text-align: center;
   text-decoration: none;
-  /* font-size: 1.5vw; */
+  font-size: 16px;
   font-family: arial;
-  margin-left: 2%;
-  margin-right: 2%; 
+  margin: 8px 10px;
+  cursor: pointer;
 }
-
-
-
 
 .node {
   fill: #fff;
@@ -46,46 +43,120 @@ html,body {
   stroke-width: 1.5px;
 }
 
-
-
 .link {
   fill: none;
-  stroke: #A9A9A9;
+  stroke: #a9a9a9;
   stroke-width: 5px;
 }
 
-
-
 .instructionbox {
-
 }
 
-
-
-
-#commentbox{
-   float: right;
-}
-
-
-#que{
+#commentbox {
   position: relative;
-  /* font-size: 1.7vw; */
-  }
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
 
+.traversal-box {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f0f8ff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
 
-
+#que {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  font-size: 18px;
+  padding: 15px;
+}
 
 .green {
-  border-color: #3297CF;
-  background-color: #3297CF;
-  border-radius: 300px;
+  border-color: #3297cf;
+  background-color: #3297cf;
+  border-radius: 50px;
   border-style: solid;
   font-size: 16px;
   font-family: arial;
-  color:white;
-  width: 19%;
-  height:5vh;
-  cursor:pointer;
+  color: white;
+  min-width: 120px;
+  padding: 12px 20px;
+  cursor: pointer;
+  margin: 8px;
+}
 
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  #tree {
+    width: 98%;
+    height: 60vh;
+    min-height: 450px;
+    margin: 5px auto;
+  }
+
+  #que {
+    width: 95%;
+    font-size: 13px;
+    padding: 8px;
+    margin: 8px auto;
+    line-height: 1.4;
+  }
+
+  .buttons {
+    width: 95%;
+    margin: 8px auto;
+  }
+
+  .buttons button,
+  .green {
+    width: 45%;
+    min-width: 90px;
+    margin: 4px 2%;
+    padding: 10px 8px;
+    font-size: 13px;
+    display: inline-block;
+  }
+
+  .comment-box,
+  .traversal-box {
+    position: relative !important;
+    width: 95% !important;
+    left: 0 !important;
+    margin: 8px auto !important;
+    height: auto !important;
+    min-height: 60px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .instruction-box {
+    width: 95%;
+    margin: 8px auto;
+  }
+
+  #button-wrapper {
+    top: auto !important;
+    position: relative !important;
+  }
+
+  #commentbox b,
+  .traversal-box b {
+    font-size: 15px;
+    display: block;
+    margin-bottom: 8px;
+  }
 }
