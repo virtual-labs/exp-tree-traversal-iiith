@@ -1,0 +1,56 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1. Which of the following is true?",
+      "answers": {
+        "a": "A tree can be traversed in a linear fashion like arrays.",
+        "b": "A tree can be traversed only in breadth first order",
+        "c": "A tree can be traversed only in depth first order",
+        "d": "A tree can be traversed in both breadth first and depth first order."
+      },
+      "correctAnswer": "d",
+      "explanations": {
+        "a": "Incorrect. Data of the tree is not stored in a linear fashion. Hence it cannot be traversed linearly like arrays.",
+        "b": "Incorrect. Trees can be traversed in multiple ways, not only breadth first order. Depth first traversals (preorder, inorder, postorder) are also valid traversal methods.",
+        "c": "Incorrect. Trees can be traversed in multiple ways, not only depth first order. Breadth first traversal (level-order) is also a valid traversal method.",
+        "d": "Correct. A tree can be traversed using both breadth first order (level-order traversal) and depth first order (preorder, inorder, postorder traversals). Both approaches are valid and useful for different purposes."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "2. Which of the following is true about Breadth First Traversal?",
+      "answers": {
+        "a": "In breadth first traversal, nodes of the tree can be traversed in any manner",
+        "b": "In breadth first traversal, nodes of the tree are traversed level by level, left to right",
+        "c": "In breadth first traversal, nodes of the tree are traversed depth wise",
+        "d": "None of the above"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. Breadth first traversal follows a specific systematic approach, not any arbitrary manner. Nodes must be visited level by level in a consistent order.",
+        "b": "Correct. In breadth first traversal (also called level-order traversal), nodes are visited level by level. At each level, nodes are typically traversed from left to right, though right to left is also valid if consistently applied throughout the traversal.",
+        "c": "Incorrect. If nodes are traversed depth-wise (exploring as far as possible along each branch before backtracking), then it is depth first traversal, not breadth first traversal.",
+        "d": "Incorrect. Option (b) correctly describes breadth first traversal."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "3. Select an option which is TRUE?",
+      "answers": {
+        "a": "A traversal of a tree does not involve visiting all the nodes",
+        "b": "Traversing a tree means visiting each node in a specified order, covering all the nodes",
+        "c": "A search of a graph must visit all the nodes in the graph",
+        "d": "None of the above"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. Traversal by definition means visiting all nodes in the tree. Skipping any node means it's not a complete and valid tree traversal.",
+        "b": "Correct. Tree traversal is a systematic process that visits every node exactly once in a predetermined order. Different traversal methods (inorder, preorder, postorder, or level-order) specify different visiting orders, but all must cover all nodes.",
+        "c": "Incorrect. Search operations will stop once the target node is found. Hence, visiting all the nodes will not be necessary in search operations, unlike traversal which must visit all nodes.",
+        "d": "Incorrect. Option (b) correctly defines tree traversal."
+      },
+      "difficulty": "intermediate"
+    }
+  ]
+}

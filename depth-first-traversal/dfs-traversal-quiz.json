@@ -1,0 +1,65 @@
+{
+    "version": 2.0,
+    "questions": [
+        {
+            "question": "1. Let us consider V to be the total number of vertices and E to be the total number of edges in a tree. What is the time complexity of Depth First Traversal in this tree?",
+            "answers": {
+                "a": "O(V)",
+                "b": "O(V + E)",
+                "c": "O(E)",
+                "d": "None of the mentioned"
+            },
+            "correctAnswer": "b",
+            "explanations": {},
+            "difficulty": "advanced"
+        },
+        {
+            "question": "2. While performing inorder traversal in a tree, what is the sequence of nodes that gets visited?",
+            "answers": {
+                "a": "Left Subtree - Root - Right Subtree",
+                "b": "Right Subtree - Root - Left Subtree",
+                "c": "Root - Left Subtree - Right Subtree",
+                "d": "None of the mentioned"
+            },
+            "correctAnswer": "a",
+            "explanations": {
+                "a": "Yes, this is the correct sequence for inorder traversal.",
+                "b": "The priority of the left and right subtree does not align with the definition of inorder traversal.",
+                "c": "The priority of the root and left subtree does not align with the definition of inorder traversal."
+            },
+            "difficulty": "beginner"
+        },
+        {
+            "question": "3. While performing preorder traversal in a tree, what is the sequence of nodes that gets followed?",
+            "answers": {
+                "a": "Left Subtree - Root - Right Subtree",
+                "b": "Left Subtree - Right Subtree - Root",
+                "c": "Root - Left Subtree - Right Subtree",
+                "d": "None of the mentioned"
+            },
+            "correctAnswer": "c",
+            "explanations": {
+                "a": "The priority of the left subtree and root does not align with the definition of preorder traversal.",
+                "b": "The priority of the root does not align with the definition of preorder traversal.",
+                "c": "Yes, this is the correct sequence for preorder traversal."
+            },
+            "difficulty": "beginner"
+        },
+        {
+            "question": "4. For the post order traversal in the binary tree, what is the sequence of nodes that gets accessed?",
+            "answers": {
+                "a": "Left Subtree - Root - Right Subtree",
+                "b": "Left Subtree - Right Subtree - Root",
+                "c": "Root - Left Subtree - Right Subtree",
+                "d": "None of the above"
+            },
+            "correctAnswer": "b",
+            "explanations": {
+                "a": "The priority of the root and right subtree does not align with the definition of post order traversal.",
+                "b": "Yes, this is the correct sequence for post order traversal.",
+                "c": "The priority of the root does not align with the definition of post order traversal."
+            },
+            "difficulty": "beginner"
+        }
+    ]
+}
