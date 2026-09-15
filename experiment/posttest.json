@@ -1,71 +1,158 @@
 {
-    "version": 2.0,
-    "questions": [
-        {
-            "question": "1. How is a tree different from a graph in terms of traversal?",
-            "answers": {
-                "a": "Depth first traversal is not possible for graphs, but can be implemented in trees.",
-                "b": "A graph contains cycles, and a tree doesn\u2019t. Hence some memory needs to be allocated to keep track of it while traversing in a graph.",
-                "c": "Breadth first traversal takes more time in graphs as compared to trees.",
-                "d": "All of the above"
-            },
-            "correctAnswer": "b",
-            "explanations": {
-                "a": "Depth first traversal can be performed in both graphs and trees.",
-                "b": "Yes, a visited array needs to be maintained to avoid getting stuck in infinite loops in graphs due to cycles.",
-                "c": "Breadth first traversal takes equal time whether it be graphs or trees."
-            },
-            "difficulty": "beginner"
-        },
-        {
-            "question": "2. We can rebuild binary tree using results of",
-            "answers": {
-                "a": "postorder and preorder traversal",
-                "b": "preorder traversal",
-                "c": "preorder and inorder traversal",
-                "d": "None of the above"
-            },
-            "correctAnswer": "c",
-            "explanations": {
-                "a": "This will result in incomplete information and hence the binary tree cannot be built.",
-                "b": "This will result in incomplete information and hence the binary tree cannot be built.",
-                "c": "Yes preorder and inorder traversal will provide complete information for identification of position of nodes in a binary tree."
-            },
-            "difficulty": "beginner"
-        },
-        {
-            "question": "3. To find the shortest distance between every node and starting node of the graph, which method can be used? ",
-            "answers": {
-                "a": "Inorder Traversal",
-                "b": "Depth First Traversal",
-                "c": "Binary Search",
-                "d": "Breadth First Traversal"
-            },
-            "correctAnswer": "d",
-            "explanations": {
-                "a": "Inorder traversal is a variant of Depth First Traversal which does not give the shortest distance.",
-                "b": "Ideal implementation of Depth First Traversal will traverse to every node irrespective of their distance from the starting node of the tree.",
-                "c": "Binary search is used to find values in logarithmic time. Hence, it never bothers about finding the shortest distance among nodes.",
-                "d": "Breadth First Traversal is performed level wise. Hence the node getting accessed always has the shortest distance from the starting node of the graph."
-            },
-            "difficulty": "intermediate"
-        },
-        {
-            "question": "4. Let us assume a binary tree consisting of nodes a, b, c, d, e, f, g (in no particular order). If the postorder traversal on the tree gives {d, e, b, f, g, c, a} as the results. Then what are the results of preorder and inorder traversals respectively?",
-            "answers": {
-                "a": "{d, f, g, a, b, c, e} and {a, f, d, g, c, b, e}",
-                "b": "{a, f, d, g, c, b, e} and {d, f, g, a, b, c, e}",
-                "c": "{a, b, d, e, c, f, g} and {d, b, e, a, f, c, g}",
-                "d": "{d, b, e, a, f, c, g} and {a, b, d, e, c, f, g}"
-            },
-            "correctAnswer": "c",
-            "explanations": {
-                "a": "Hint: Try obtaining the question from the result.",
-                "b": "Hint: Try obtaining the question from the result.",
-                "c": "Correct, building a binary tree from preorder and inorder traversals, and then running postorder traversal will give the result.",
-                "d": "Hint: Try obtaining the question from the result."
-            },
-            "difficulty": "advanced"
-        }
-    ]
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1. How is traversal of a tree different from traversal of a general graph?",
+      "answers": {
+        "a": "Depth First Traversal is not possible for graphs, but it can be implemented in trees",
+        "b": "A general graph may contain cycles, so graph traversal may need to keep track of visited vertices to avoid revisiting them",
+        "c": "Breadth First Traversal always takes more time in graphs than in trees",
+        "d": "All of the above"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. Depth First Traversal can be performed on both trees and graphs.",
+        "b": "Correct. General graphs may contain cycles or multiple paths to the same vertex, so traversal commonly maintains visited information to avoid repeated processing.",
+        "c": "Incorrect. The traversal time depends on the number of vertices and edges and cannot be compared solely by whether the structure is a graph or a tree.",
+        "d": "Incorrect. Not all of the statements are correct."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "2. We can uniquely reconstruct a binary tree with distinct node values using the results of which traversals?",
+      "answers": {
+        "a": "Postorder and preorder traversal",
+        "b": "Preorder traversal only",
+        "c": "Preorder and inorder traversal",
+        "d": "Inorder traversal only"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. These two traversals do not generally provide enough information to uniquely determine the left and right subtree boundaries.",
+        "b": "Incorrect. A single preorder sequence does not generally specify the complete binary tree structure.",
+        "c": "Correct. With distinct node values, preorder identifies subtree roots while inorder identifies the division between left and right subtrees.",
+        "d": "Incorrect. A single inorder sequence does not generally determine the complete tree structure."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "3. To find the shortest distance in terms of number of edges from a starting vertex to every reachable vertex in an unweighted graph, which traversal can be used?",
+      "answers": {
+        "a": "Inorder Traversal",
+        "b": "Depth First Traversal",
+        "c": "Binary Search",
+        "d": "Breadth First Traversal"
+      },
+      "correctAnswer": "d",
+      "explanations": {
+        "a": "Incorrect. Inorder traversal is defined for binary trees and is not a general shortest-distance method for graphs.",
+        "b": "Incorrect. Depth First Traversal does not generally process vertices in nondecreasing order of their distance from the starting vertex.",
+        "c": "Incorrect. Binary search is a searching technique for ordered data and does not compute graph distances.",
+        "d": "Correct. In an unweighted graph, Breadth First Traversal explores vertices level by level, so the first level at which a vertex is reached gives its shortest distance in number of edges from the starting vertex."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "4. Let us assume a binary tree consisting of nodes a, b, c, d, e, f, g. If the postorder traversal on the tree gives {d, e, b, f, g, c, a}, then what are the preorder and inorder traversals respectively?",
+      "answers": {
+        "a": "{d, f, g, a, b, c, e} and {a, f, d, g, c, b, e}",
+        "b": "{a, f, d, g, c, b, e} and {d, f, g, a, b, c, e}",
+        "c": "{a, b, d, e, c, f, g} and {d, b, e, a, f, c, g}",
+        "d": "{d, b, e, a, f, c, g} and {a, b, d, e, c, f, g}"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. The proposed preorder and inorder sequences do not reconstruct a tree whose postorder matches the given sequence.",
+        "b": "Incorrect. The proposed sequences place the nodes in positions that are inconsistent with the subtree structure implied by the given postorder.",
+        "c": "Correct. The proposed preorder and inorder traversals reconstruct a binary tree whose postorder traversal is {d, e, b, f, g, c, a}.",
+        "d": "Incorrect. The proposed sequences do not produce the given postorder when the corresponding tree is traversed."
+      },
+      "difficulty": "advanced"
+    },
+    {
+      "question": "5. Consider a binary tree with root A, left child B, and right child C. B has children D and E. What is the level-order traversal?",
+      "answers": {
+        "a": "D, B, E, A, C",
+        "b": "A, B, C, D, E",
+        "c": "A, B, D, E, C",
+        "d": "D, E, B, C, A"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. This ordering begins with a deeper level before completing the upper levels.",
+        "b": "Correct. Level-order traversal visits A first, then B and C, followed by D and E.",
+        "c": "Incorrect. This ordering visits D and E before completing the level containing C.",
+        "d": "Incorrect. This ordering starts with leaf nodes rather than the root."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "6. Which traversal of a binary tree visits the root after both its left and right subtrees?",
+      "answers": {
+        "a": "Preorder",
+        "b": "Inorder",
+        "c": "Breadth First Traversal",
+        "d": "Postorder"
+      },
+      "correctAnswer": "d",
+      "explanations": {
+        "a": "Incorrect. Preorder visits the root before its subtrees.",
+        "b": "Incorrect. Inorder visits the root between the left and right subtrees.",
+        "c": "Incorrect. Breadth First Traversal determines order by levels rather than by placing the root after both subtrees.",
+        "d": "Correct. Postorder traversal visits the left subtree, then the right subtree, and finally the root."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "7. If a binary tree has $n$ nodes, what is the time complexity of preorder traversal when every node is visited exactly once?",
+      "answers": {
+        "a": "$O(n)$",
+        "b": "$O(1)$",
+        "c": "$O(\\log n)$",
+        "d": "$O(n^2)$"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. Preorder traversal visits each of the $n$ nodes once, resulting in $O(n)$ time.",
+        "b": "Incorrect. The traversal must process every node, so the work grows with $n$.",
+        "c": "Incorrect. Visiting all nodes requires more work than logarithmic time in general.",
+        "d": "Incorrect. Visiting each node once does not require quadratic work."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "8. Which traversal is most directly associated with a queue in its standard iterative implementation?",
+      "answers": {
+        "a": "Preorder traversal",
+        "b": "Inorder traversal",
+        "c": "Breadth First Traversal",
+        "d": "Postorder traversal"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. Preorder is a depth-first traversal and is commonly implemented iteratively using a stack.",
+        "b": "Incorrect. Inorder is commonly implemented iteratively using a stack to manage traversal state.",
+        "c": "Correct. Breadth First Traversal uses a queue to process nodes level by level.",
+        "d": "Incorrect. Postorder is a depth-first traversal and can be implemented using stack-based techniques."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "9. Consider a binary tree with root A, left subtree rooted at B, and right subtree rooted at C. B has children D and E, while C has children F and G. Which sequence is the postorder traversal?",
+      "answers": {
+        "a": "A, B, D, E, C, F, G",
+        "b": "D, E, B, F, G, C, A",
+        "c": "A, B, C, D, E, F, G",
+        "d": "D, B, E, A, F, C, G"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. This sequence places the root before its subtrees have been completely processed.",
+        "b": "Correct. Postorder visits D and E, then B, followed by F and G, then C, and finally A.",
+        "c": "Incorrect. This sequence begins with the root and therefore follows a preorder-like ordering.",
+        "d": "Incorrect. This sequence does not completely process the left and right subtrees in postorder before visiting their respective roots."
+      },
+      "difficulty": "advanced"
+    }
+  ]
 }
