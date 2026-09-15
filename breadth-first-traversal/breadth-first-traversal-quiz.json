@@ -1,0 +1,158 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1. Let us consider $V$ to be the total number of vertices and $E$ to be the total number of edges in a tree. What is the time complexity of Breadth First Traversal in this tree?",
+      "answers": {
+        "a": "$O(E * V)$",
+        "b": "$O(V)$",
+        "c": "$O(E + V)$",
+        "d": "$O(E + E * V)$"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. Breadth First Traversal does not repeatedly process every edge for every vertex.",
+        "b": "Incorrect. Although traversal visits each vertex once, its general graph-style complexity is expressed in terms of both vertices and edges.",
+        "c": "Correct. Breadth First Traversal processes each reachable vertex and edge a bounded number of times, giving a time complexity of $O(E + V)$.",
+        "d": "Incorrect. This expression introduces an additional multiplication between the number of edges and vertices that is not required by the traversal."
+      },
+      "difficulty": "advanced"
+    },
+    {
+      "question": "2. What is the most appropriate data structure for Breadth First Traversal of a tree?",
+      "answers": {
+        "a": "Linked List",
+        "b": "Queue",
+        "c": "Stack",
+        "d": "Array"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. A linked list can be used to implement a queue, but the traversal itself requires queue behavior rather than a linked list as the conceptual data structure.",
+        "b": "Correct. A queue follows the First-In-First-Out principle, which allows nodes to be processed level by level.",
+        "c": "Incorrect. A stack follows the Last-In-First-Out principle and is associated with depth-oriented traversal.",
+        "d": "Incorrect. An array can be used to implement a queue, but an array by itself does not provide the required queue behavior."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "3. In Breadth First Traversal of a binary tree, when a node is removed from the queue, what is typically done next?",
+      "answers": {
+        "a": "Its children are added to the queue",
+        "b": "The node is pushed onto a stack and ignored",
+        "c": "Only its parent is added to the queue",
+        "d": "The entire tree is traversed recursively before continuing"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. After processing a node, its children are typically added to the queue so that they can be processed at the appropriate level.",
+        "b": "Incorrect. Moving the node to a stack is not the standard queue-based operation used by Breadth First Traversal.",
+        "c": "Incorrect. Traversal proceeds toward the node's children rather than reprocessing its parent.",
+        "d": "Incorrect. Breadth First Traversal processes nodes using the queue instead of recursively completing the entire tree before continuing."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "4. Breadth First Traversal of a tree is also commonly called which of the following?",
+      "answers": {
+        "a": "Postorder traversal",
+        "b": "Inorder traversal",
+        "c": "Level-order traversal",
+        "d": "Preorder traversal"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. Postorder traversal processes the root after its subtrees.",
+        "b": "Incorrect. Inorder traversal follows a left-root-right ordering in a binary tree.",
+        "c": "Correct. Breadth First Traversal visits nodes level by level and is therefore commonly called level-order traversal.",
+        "d": "Incorrect. Preorder traversal visits the root before its subtrees and is a depth-first traversal."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "5. Which property of a queue makes it suitable for Breadth First Traversal?",
+      "answers": {
+        "a": "Last-In-First-Out",
+        "b": "First-In-First-Out",
+        "c": "Random access",
+        "d": "Sorted insertion"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. Last-In-First-Out is the defining behavior of a stack.",
+        "b": "Correct. First-In-First-Out processing allows nodes discovered earlier to be processed before nodes discovered later, supporting level-by-level traversal.",
+        "c": "Incorrect. Random access is not the property that determines the traversal order.",
+        "d": "Incorrect. A queue does not require elements to be sorted when they are inserted."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "6. Consider a binary tree whose root is $A$, with children $B$ and $C$. If $B$ has children $D$ and $E$, and $C$ has children $F$ and $G$, what is the Breadth First Traversal?",
+      "answers": {
+        "a": "A, B, C, D, E, F, G",
+        "b": "A, D, B, E, C, F, G",
+        "c": "D, E, B, F, G, C, A",
+        "d": "A, B, D, E, C, F, G"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. Breadth First Traversal visits the root first, then nodes at the next level from left to right, followed by the next level.",
+        "b": "Incorrect. This ordering moves to a deeper node before completing the current level.",
+        "c": "Incorrect. This ordering starts from leaf nodes and therefore does not follow level-order traversal.",
+        "d": "Incorrect. This ordering visits a child of $B$ before completing the current level containing $C$."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "7. What is the maximum number of nodes stored in the queue at a particular point during Breadth First Traversal?",
+      "answers": {
+        "a": "Always exactly one node",
+        "b": "Always equal to the height of the tree",
+        "c": "It can be proportional to the maximum width of the tree",
+        "d": "Always equal to the total number of nodes"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. A queue can contain multiple nodes when several nodes from the same or upcoming level are waiting to be processed.",
+        "b": "Incorrect. The height and width of a tree describe different structural properties.",
+        "c": "Correct. The queue may contain many nodes from a level, so its maximum size can be proportional to the maximum width of the tree.",
+        "d": "Incorrect. The queue normally contains only nodes that have been discovered but not yet processed."
+      },
+      "difficulty": "advanced"
+    },
+    {
+      "question": "8. If a tree has $V$ vertices and $E$ edges, how many times is each vertex typically processed during a standard Breadth First Traversal?",
+      "answers": {
+        "a": "Exactly once",
+        "b": "Exactly twice",
+        "c": "At least $V$ times",
+        "d": "Exactly $E$ times"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. In a standard traversal of a tree, each vertex is removed from the traversal structure and processed once.",
+        "b": "Incorrect. Standard Breadth First Traversal does not require processing each vertex twice.",
+        "c": "Incorrect. The number of processing operations is not multiplied by the total number of vertices.",
+        "d": "Incorrect. The number of edges does not determine how many times an individual vertex is processed."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "9. Suppose the root of a binary tree is at level $0$. Which nodes are processed before nodes at level $2$ during Breadth First Traversal?",
+      "answers": {
+        "a": "Only the root",
+        "b": "Only nodes at level $2$",
+        "c": "Nodes at level $3$",
+        "d": "Nodes at levels $0$ and $1$"
+      },
+      "correctAnswer": "d",
+      "explanations": {
+        "a": "Incorrect. Breadth First Traversal does not stop after processing the root when deeper levels exist.",
+        "b": "Incorrect. Nodes at level $2$ are processed after the preceding levels.",
+        "c": "Incorrect. A deeper level cannot be processed before the preceding levels in standard level-order traversal.",
+        "d": "Correct. Breadth First Traversal processes all nodes at levels $0$ and $1$ before processing nodes at level $2$."
+      },
+      "difficulty": "advanced"
+    }
+  ]
+}

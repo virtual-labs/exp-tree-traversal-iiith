@@ -1,0 +1,26 @@
+.hint_con { color: "black";padding:0%;text-align:
+  center; text-decoration: none; display: inline-block; font-size:
+  1vmax;
+  border-radius: 2vw;
+  border-width: 1px;
+  position: absolute ; 
+  top: 200%; height: 20vh; 
+  width: 22vw;
+  position: absolute; 
+   margin-bottom:20px; background-color: #fff; 
+  border: 1px solid transparent;
+  border-radius: 4px; 
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  margin-right: 65vw;
+  right: 10px;
+ }
+
+
+#hint_con_1{ border-color: rgba(105, 179, 215, 1.0); }
+#hint_title { color: #fff; background-color: rgba(105, 179, 215, 1.0);
+  border-color: rgba(105, 179, 215, 1.0); /* padding: 10px 15px; */
+  border-bottom: 1px solid transparent; border-top-left-radius: 3px;
+  border-top-right-radius: 3px; height: 10vh; font-size: 2vmin;
+  text-align: center;  }
+#hint { position: relative; color: "black"; top: 1.2vh; font-size:
+  3vmin; font-family: "Verdana";  }

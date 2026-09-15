@@ -1,0 +1,158 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1. Which of the following is true about tree traversal?",
+      "answers": {
+        "a": "A tree can be traversed only in a linear fashion like an array",
+        "b": "A tree can be traversed only in breadth first order",
+        "c": "A tree can be traversed only in depth first order",
+        "d": "A tree can be traversed using both breadth first and depth first orders"
+      },
+      "correctAnswer": "d",
+      "explanations": {
+        "a": "Incorrect. Trees have hierarchical structures, and traversal methods are designed to systematically visit their nodes.",
+        "b": "Incorrect. A tree can also be traversed using depth-first methods.",
+        "c": "Incorrect. A tree can also be traversed using breadth-first traversal.",
+        "d": "Correct. Trees can be traversed using Breadth First Traversal and Depth First Traversal. Depth-first methods for binary trees include preorder, inorder, and postorder traversal."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "2. Which of the following is true about Breadth First Traversal?",
+      "answers": {
+        "a": "In Breadth First Traversal, nodes can be visited in any arbitrary order",
+        "b": "In Breadth First Traversal, nodes are traversed level by level",
+        "c": "In Breadth First Traversal, nodes are always traversed by following one branch to its deepest node",
+        "d": "Breadth First Traversal visits only the leaf nodes"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. Breadth First Traversal follows a systematic level-based order rather than an arbitrary order.",
+        "b": "Correct. Breadth First Traversal, also called level-order traversal, processes nodes level by level. In a binary tree, nodes within a level are commonly processed from left to right.",
+        "c": "Incorrect. Following one branch as deeply as possible describes depth-first behavior.",
+        "d": "Incorrect. Breadth First Traversal visits internal nodes as well as leaf nodes."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "3. Select the option which is TRUE.",
+      "answers": {
+        "a": "A traversal of a tree does not involve visiting all the nodes",
+        "b": "Traversing a tree means visiting each node in a specified order, covering all the nodes",
+        "c": "A tree traversal must stop as soon as a leaf node is encountered",
+        "d": "A tree can be traversed only when all nodes have two children"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. A complete tree traversal is intended to visit every node of the tree.",
+        "b": "Correct. Tree traversal is a systematic process of visiting every node according to a specified order.",
+        "c": "Incorrect. Encountering a leaf node does not mean that the complete traversal is finished.",
+        "d": "Incorrect. Tree traversal can be performed on trees containing nodes with zero, one, or two children."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "4. Which of the following is a Depth First Traversal of a binary tree?",
+      "answers": {
+        "a": "Level-order traversal",
+        "b": "Breadth First Traversal",
+        "c": "Inorder traversal",
+        "d": "Level-by-level traversal"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. Level-order traversal processes nodes according to their levels.",
+        "b": "Incorrect. Breadth First Traversal is level-oriented rather than depth-oriented.",
+        "c": "Correct. Inorder traversal is one of the standard depth-first traversals of a binary tree.",
+        "d": "Incorrect. Level-by-level processing describes breadth-oriented traversal."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "5. Which of the following is the correct order for preorder traversal?",
+      "answers": {
+        "a": "Left Subtree - Root - Right Subtree",
+        "b": "Root - Left Subtree - Right Subtree",
+        "c": "Left Subtree - Right Subtree - Root",
+        "d": "Right Subtree - Root - Left Subtree"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. This ordering corresponds to inorder traversal.",
+        "b": "Correct. Preorder traversal visits the root, then the left subtree, and then the right subtree.",
+        "c": "Incorrect. This ordering corresponds to postorder traversal.",
+        "d": "Incorrect. Reversing the standard subtree order does not define preorder traversal."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "6. Which of the following is the correct order for postorder traversal?",
+      "answers": {
+        "a": "Root - Left Subtree - Right Subtree",
+        "b": "Left Subtree - Root - Right Subtree",
+        "c": "Left Subtree - Right Subtree - Root",
+        "d": "Root - Right Subtree - Left Subtree"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. This ordering corresponds to preorder traversal.",
+        "b": "Incorrect. This ordering corresponds to inorder traversal.",
+        "c": "Correct. Postorder traversal visits the left subtree, then the right subtree, and finally the root.",
+        "d": "Incorrect. This ordering does not represent the standard postorder traversal."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "7. Which data structure is commonly used to implement Breadth First Traversal?",
+      "answers": {
+        "a": "Queue",
+        "b": "Stack",
+        "c": "Heap",
+        "d": "Binary search tree"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. A queue provides First-In-First-Out behavior, which supports level-by-level traversal.",
+        "b": "Incorrect. A stack provides Last-In-First-Out behavior and is commonly associated with depth-first traversal.",
+        "c": "Incorrect. A heap is primarily used for priority-based operations rather than maintaining level-order traversal.",
+        "d": "Incorrect. A binary search tree is a tree structure, not the traversal data structure used to maintain the Breadth First Traversal order."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "8. Which statement correctly compares preorder, inorder, and postorder traversal?",
+      "answers": {
+        "a": "They all visit the root at exactly the same position",
+        "b": "They differ in the position at which the root is visited relative to its subtrees",
+        "c": "They can be used only for trees containing numeric values",
+        "d": "They are all forms of Breadth First Traversal"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. The position of the root differs among preorder, inorder, and postorder traversal.",
+        "b": "Correct. The three traversals differ primarily in whether the root is processed before, between, or after its subtrees.",
+        "c": "Incorrect. Traversal methods depend on the tree structure and do not require values to be numeric.",
+        "d": "Incorrect. Preorder, inorder, and postorder are depth-first traversal methods for binary trees."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "9. A binary tree has $n$ nodes. What is the time complexity of visiting every node exactly once during a standard tree traversal?",
+      "answers": {
+        "a": "$O(1)$",
+        "b": "$O(\\log n)$",
+        "c": "$O(n)$",
+        "d": "$O(n^2)$"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. Visiting every node requires work that grows with the number of nodes.",
+        "b": "Incorrect. A traversal visits all nodes, so its work is not limited to logarithmic growth.",
+        "c": "Correct. If each of the $n$ nodes is visited once, the traversal takes $O(n)$ time.",
+        "d": "Incorrect. Visiting each node once does not require a quadratic number of operations."
+      },
+      "difficulty": "advanced"
+    }
+  ]
+}

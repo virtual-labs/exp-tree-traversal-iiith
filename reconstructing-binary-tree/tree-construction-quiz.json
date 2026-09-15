@@ -1,0 +1,158 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1. Consider the following Inorder and Preorder traversal of a binary tree:<br>Inorder = {6, 4, 7, 2, 12, 5, 1, 18, 3, 19}<br>Preorder = {1, 2, 4, 6, 7, 5, 12, 3, 18, 19}<br>Reconstruct the binary tree and choose the correct postorder traversal from the given options:",
+      "answers": {
+        "a": "6, 4, 7, 2, 12, 5, 1, 18, 3, 19",
+        "b": "4, 6, 7, 2, 5, 12, 19, 18, 3, 1",
+        "c": "6, 7, 4, 12, 5, 2, 18, 19, 3, 1",
+        "d": "None of the above"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. This sequence matches the given inorder traversal rather than the postorder traversal of the reconstructed tree.",
+        "b": "Incorrect. The relative positions of the nodes do not match the subtree structure obtained from the given preorder and inorder traversals.",
+        "c": "Correct. The preorder traversal identifies the roots of the subtrees, while the inorder traversal separates the left and right subtrees. The resulting postorder traversal is 6, 7, 4, 12, 5, 2, 18, 19, 3, 1.",
+        "d": "Incorrect. A valid postorder traversal can be obtained by reconstructing the binary tree from the given traversals."
+      },
+      "difficulty": "advanced"
+    },
+    {
+      "question": "2. Consider the following Inorder and Postorder traversal of a binary tree:<br>Inorder = {D, B, E, A, F, G, C, H}<br>Postorder = {D, E, B, F, G, H, C, A}<br>Reconstruct the binary tree and choose the correct preorder traversal from the given options:",
+      "answers": {
+        "a": "D, E, B, F, G, H, C, A",
+        "b": "A, B, D, E, C, G, F, H",
+        "c": "D, B, E, A, F, G, C, H",
+        "d": "None of the above"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. This sequence is the given postorder traversal rather than the preorder traversal of the reconstructed tree.",
+        "b": "Correct. The last element of postorder identifies the root, and inorder separates the left and right subtrees. The resulting preorder traversal is A, B, D, E, C, G, F, H.",
+        "c": "Incorrect. This sequence corresponds to the given inorder traversal and does not represent the required preorder traversal.",
+        "d": "Incorrect. The given traversals contain sufficient information to reconstruct the tree and determine its preorder traversal."
+      },
+      "difficulty": "advanced"
+    },
+    {
+      "question": "3. Which pair of traversal results is sufficient to uniquely reconstruct a binary tree when all node values are distinct?",
+      "answers": {
+        "a": "Preorder and inorder",
+        "b": "Preorder only",
+        "c": "Inorder only",
+        "d": "Level-order only"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. With distinct node values, preorder identifies subtree roots and inorder identifies the division between left and right subtrees.",
+        "b": "Incorrect. A single preorder sequence does not generally provide enough information to determine the complete left-right structure.",
+        "c": "Incorrect. A single inorder sequence does not generally provide enough information to determine the complete tree structure.",
+        "d": "Incorrect. Level-order information alone does not generally uniquely determine the structure of a binary tree."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "4. In a preorder traversal, which node is encountered first?",
+      "answers": {
+        "a": "The leftmost leaf",
+        "b": "The rightmost leaf",
+        "c": "The root",
+        "d": "The deepest node"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. A preorder traversal begins before reaching the leaf nodes.",
+        "b": "Incorrect. The rightmost leaf is not necessarily encountered before the root.",
+        "c": "Correct. Preorder traversal always visits the root of the current subtree before its children.",
+        "d": "Incorrect. The deepest node is reached only after its ancestors have been processed."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "5. In a postorder traversal, which node of a subtree is visited last?",
+      "answers": {
+        "a": "The left child",
+        "b": "The root of the subtree",
+        "c": "The right child",
+        "d": "The first leaf"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. The left subtree is processed before the root in postorder traversal.",
+        "b": "Correct. Postorder traversal visits the root only after both its subtrees have been processed.",
+        "c": "Incorrect. The right subtree is processed before the root, but it is not necessarily the final node overall.",
+        "d": "Incorrect. A leaf can occur before other nodes depending on the structure of the tree."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "6. When reconstructing a binary tree from preorder and inorder traversals, what does the first element of the preorder sequence represent?",
+      "answers": {
+        "a": "The root of the current subtree",
+        "b": "The leftmost leaf",
+        "c": "The right subtree root only",
+        "d": "The deepest node"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. The first element in preorder is the root of the current subtree being reconstructed.",
+        "b": "Incorrect. The leftmost leaf is determined using the subtree structure and is not necessarily the first preorder element.",
+        "c": "Incorrect. The first preorder element represents the current subtree root, not specifically its right subtree root.",
+        "d": "Incorrect. Preorder does not begin by selecting the deepest node."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "7. When reconstructing a binary tree from inorder and postorder traversals, what does the last element of the postorder sequence represent?",
+      "answers": {
+        "a": "The leftmost leaf",
+        "b": "The root of the current subtree",
+        "c": "The first node of the right subtree",
+        "d": "The deepest node"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. The last postorder element is determined by the root position, not by the leftmost leaf.",
+        "b": "Correct. Postorder visits the root after both subtrees, so its last element is the root of the current subtree.",
+        "c": "Incorrect. The right subtree has already been processed before the root appears in postorder.",
+        "d": "Incorrect. Depth does not determine the last element of postorder."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "8. Consider a binary tree with preorder traversal A, B, D, E, C and inorder traversal D, B, E, A, C. Which node is the root?",
+      "answers": {
+        "a": "D",
+        "b": "B",
+        "c": "C",
+        "d": "A"
+      },
+      "correctAnswer": "d",
+      "explanations": {
+        "a": "Incorrect. D appears within the left subtree of the root in the inorder sequence.",
+        "b": "Incorrect. B occurs after the root in the preorder sequence and therefore is not the root of the complete tree.",
+        "c": "Incorrect. C belongs to the right side of the tree according to the inorder sequence.",
+        "d": "Correct. The first element of preorder is A, so A is the root of the binary tree."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "9. Why is an inorder traversal useful when reconstructing a binary tree from preorder or postorder information?",
+      "answers": {
+        "a": "It identifies which nodes belong to the left and right subtrees relative to a known root",
+        "b": "It always contains the root as its first element",
+        "c": "It sorts the nodes automatically",
+        "d": "It guarantees that the tree is a binary search tree"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. Once the root is known, its position in inorder separates the nodes belonging to the left and right subtrees.",
+        "b": "Incorrect. The root does not generally appear first in an inorder traversal.",
+        "c": "Incorrect. Inorder traversal does not automatically sort values unless additional ordering properties exist in the tree.",
+        "d": "Incorrect. Reconstruction from traversals does not by itself impose the binary search tree ordering property."
+      },
+      "difficulty": "advanced"
+    }
+  ]
+}
