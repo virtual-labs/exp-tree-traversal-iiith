@@ -1,79 +1,150 @@
 {
-    "version": 2.0,
-    "questions": [
-        {
-            "question": "1. Which of the following statements are correct about a binary tree?",
-            "answers": {
-                "a": "A node in a binary tree can have exactly two children",
-                "b": "A node in a binary tree can have at most two children",
-                "c": "A node in a binary tree can have two or more children",
-                "d": "A node in a binary tree can have more than one root"
-            },
-            "correctAnswer": "b",
-            "explanations": {
-                "a": "A node can also have less than two children in a binary tree",
-                "b": "Yes, a node in binary tree can have zero, one or two children",
-                "c": "Children count of binary tree node cannot exceed 2, hence it is called \u201cbinary\u201d",
-                "d": "No, if a node has more than one parent(root), then there is a possibility of cycle in the tree, which violates the tree property"
-            },
-            "difficulty": "intermediate"
-        },
-        {
-            "question": "2. Node values in a binary tree always appear in a sorted order from root to leaf, going left to right at each level.",
-            "answers": {
-                "a": "True",
-                "b": "False"
-            },
-            "correctAnswer": "b",
-            "explanations": {
-                "a": "No, there is no particular order followed among the nodes in a binary tree."
-            },
-            "difficulty": "intermediate"
-        },
-        {
-            "question": "3. Which of the following is TRUE about the leaf nodes of a binary tree?",
-            "answers": {
-                "a": "Leaf nodes in a binary tree have no children",
-                "b": "At Least one leaf node in a binary tree has two children",
-                "c": "Leaf nodes in a binary tree are allowed to have more than two children",
-                "d": "Leaf nodes in a binary tree may or may not have child nodes"
-            },
-            "correctAnswer": "a",
-            "explanations": {
-                "b": "No, if a node has two children, then it wouldn\u2019t be called a leaf node.",
-                "c": "No, if a node has two or more childrens, then it wouldn\u2019t be called a leaf node. Moreover in a binary tree, a node can have at most two children.",
-                "d": "No, if a node has children, then it wouldn\u2019t be called a leaf node."
-            },
-            "difficulty": "beginner"
-        },
-        {
-            "question": "4. In a binary tree all nodes are connected.",
-            "answers": {
-                "a": "True",
-                "b": "False"
-            },
-            "correctAnswer": "a",
-            "explanations": {
-                "b": "If nodes are not connected, then it would form multiple trees, and hence would be called a forest."
-            },
-            "difficulty": "beginner"
-        },
-        {
-            "question": "5. Which of the following is TRUE about a binary tree?",
-            "answers": {
-                "a": "There exists a cycle between nodes in a binary tree",
-                "b": "There may or may not be a cycle in a binary tree",
-                "c": "A binary tree does not have any cycles",
-                "d": "There should be at least one cycle in a binary tree"
-            },
-            "correctAnswer": "c",
-            "explanations": {
-                "a": "If there is a cycle in a tree, then it would disobey the property of the tree.",
-                "b": "If there is a cycle in a tree, then it would disobey the property of the tree.",
-                "c": "The basic property of the tree is that it doesn\u2019t contain any cycle, else it would become a graph.",
-                "d": "If there is a cycle in a tree, then it would disobey the property of the tree."
-            },
-            "difficulty": "beginner"
-        }
-    ]
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1. Which of the following statements is correct about a binary tree?",
+      "answers": {
+        "a": "A node in a binary tree must have exactly two children",
+        "b": "A node in a binary tree can have at most two children",
+        "c": "A node in a binary tree can have two or more children",
+        "d": "A binary tree can have more than one root"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. A binary tree node may have zero, one, or two children, so having exactly two children is not required.",
+        "b": "Correct. A node in a binary tree can have zero, one, or two children, but it cannot have more than two children.",
+        "c": "Incorrect. A binary tree restricts each node to a maximum of two children.",
+        "d": "Incorrect. A tree is rooted at a single root node, so multiple roots would not describe a single binary tree."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "2. Node values in a binary tree always appear in a sorted order from root to leaf, going left to right at each level.",
+      "answers": {
+        "a": "True",
+        "b": "False"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. A general binary tree does not require its node values to follow a sorted order.",
+        "b": "Correct. A general binary tree has no requirement that node values be sorted. Ordering of values is a property associated with specific tree types such as a binary search tree."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "3. Which of the following is TRUE about the leaf nodes of a binary tree?",
+      "answers": {
+        "a": "Leaf nodes in a binary tree have no children",
+        "b": "At least one leaf node in a binary tree has two children",
+        "c": "Leaf nodes in a binary tree are allowed to have more than two children",
+        "d": "Leaf nodes in a binary tree may or may not have child nodes"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. A leaf node is a node that has no children.",
+        "b": "Incorrect. A node with children does not satisfy the definition of a leaf node.",
+        "c": "Incorrect. A leaf node has no children, and a binary tree also limits each node to at most two children.",
+        "d": "Incorrect. A node that has one or more children is not classified as a leaf node."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "4. In a binary tree, all nodes are connected through parent-child relationships.",
+      "answers": {
+        "a": "True",
+        "b": "False"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. A tree is a connected structure in which every node is reachable from the root through parent-child relationships.",
+        "b": "Incorrect. If the nodes were separated into disconnected components, the structure would no longer be a single tree."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "5. Which of the following is TRUE about a binary tree?",
+      "answers": {
+        "a": "There exists a cycle between nodes in a binary tree",
+        "b": "There may or may not be a cycle in a binary tree",
+        "c": "A binary tree does not contain any cycles",
+        "d": "There should be at least one cycle in a binary tree"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. A cycle violates the defining properties of a tree.",
+        "b": "Incorrect. A tree structure is required to be acyclic, so allowing cycles would violate the tree property.",
+        "c": "Correct. A binary tree is a tree and therefore does not contain cycles.",
+        "d": "Incorrect. The presence of a cycle would make the structure inconsistent with the definition of a tree."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "6. Which traversal visits the root node before its left and right subtrees?",
+      "answers": {
+        "a": "Inorder traversal",
+        "b": "Postorder traversal",
+        "c": "Preorder traversal",
+        "d": "Level-order traversal"
+      },
+      "correctAnswer": "c",
+      "explanations": {
+        "a": "Incorrect. Inorder traversal visits the left subtree before the root.",
+        "b": "Incorrect. Postorder traversal visits the root after both subtrees.",
+        "c": "Correct. Preorder traversal visits the root first, followed by the left and right subtrees.",
+        "d": "Incorrect. Level-order traversal visits nodes level by level rather than being defined by a root-left-right recursive order."
+      },
+      "difficulty": "beginner"
+    },
+    {
+      "question": "7. Which traversal follows the order Left Subtree - Root - Right Subtree?",
+      "answers": {
+        "a": "Preorder traversal",
+        "b": "Inorder traversal",
+        "c": "Postorder traversal",
+        "d": "Level-order traversal"
+      },
+      "correctAnswer": "b",
+      "explanations": {
+        "a": "Incorrect. Preorder traversal visits the root before its subtrees.",
+        "b": "Correct. Inorder traversal follows the order Left Subtree - Root - Right Subtree.",
+        "c": "Incorrect. Postorder traversal visits the root after both subtrees.",
+        "d": "Incorrect. Level-order traversal processes nodes according to their levels rather than this subtree-root-subtree order."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "8. A binary tree contains $n$ nodes. How many nodes should a complete traversal visit?",
+      "answers": {
+        "a": "$n$",
+        "b": "$n - 1$",
+        "c": "$2n$",
+        "d": "$n + 1$"
+      },
+      "correctAnswer": "a",
+      "explanations": {
+        "a": "Correct. A complete tree traversal visits every one of the $n$ nodes exactly once.",
+        "b": "Incorrect. Omitting one node would mean that the traversal did not visit every node in the tree.",
+        "c": "Incorrect. A traversal does not require visiting each node twice.",
+        "d": "Incorrect. A traversal of a tree with $n$ nodes does not introduce an additional node."
+      },
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "9. Which statement best distinguishes a binary tree from a binary search tree?",
+      "answers": {
+        "a": "A binary tree must store values in sorted order, while a binary search tree does not",
+        "b": "A binary search tree can have more than two children per node",
+        "c": "A binary tree cannot be traversed using inorder traversal",
+        "d": "A binary search tree has an ordering property for node values, while a general binary tree does not"
+      },
+      "correctAnswer": "d",
+      "explanations": {
+        "a": "Incorrect. A general binary tree does not require its values to be sorted.",
+        "b": "Incorrect. A binary search tree is also a binary tree, so each node has at most two children.",
+        "c": "Incorrect. Inorder traversal can be performed on any binary tree.",
+        "d": "Correct. A binary search tree imposes an ordering relationship between values in its left and right subtrees, while a general binary tree does not."
+      },
+      "difficulty": "advanced"
+    }
+  ]
 }

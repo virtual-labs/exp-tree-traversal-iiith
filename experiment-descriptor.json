@@ -2,11 +2,10 @@
   "unit-type": "lu",
   "label": "Tree Traversal",
   "basedir": ".",
+  "LaTeXinMD": "true",
   "code-assessment": {
     "include": true,
-    "languages": [
-      "javascript"
-    ],
+    "languages": ["javascript"],
     "position": 7
   },
   "units": [
@@ -20,7 +19,7 @@
       "source": "overview.md",
       "target": "overview.html"
     },
-    
+
     {
       "unit-type": "task",
       "label": "Pretest",
@@ -36,8 +35,8 @@
         {
           "unit-type": "aim"
         },
-       
-	{
+
+        {
           "unit-type": "task",
           "label": "Concept",
           "content-type": "video",
@@ -45,13 +44,12 @@
           "target": "tree-traversals-basics.html"
         },
         {
-      "unit-type": "task",
-      "label": "Quiz",
-      "content-type": "assesment",
-      "source": "basics-of-traversal-quiz.json",
-      "target": "basics-of-traversal-quiz.html"
-    }
-      
+          "unit-type": "task",
+          "label": "Quiz",
+          "content-type": "assesment",
+          "source": "basics-of-traversal-quiz.json",
+          "target": "basics-of-traversal-quiz.html"
+        }
       ]
     },
     {
@@ -62,7 +60,7 @@
         {
           "unit-type": "aim"
         },
-	
+
         {
           "unit-type": "task",
           "label": "Recursive",
@@ -84,14 +82,14 @@
           "source": "simulation/dft.html",
           "target": "dft.html"
         },
-	{
+        {
           "unit-type": "task",
           "label": "Practice",
           "content-type": "simulation",
           "source": "simulation/dft-practice.html",
           "target": "dft-practice.html"
         },
-	{
+        {
           "unit-type": "task",
           "label": "Exercise",
           "content-type": "simulation",
@@ -99,15 +97,15 @@
           "target": "dft-exercise.html"
         },
         {
-         "unit-type": "task",
-         "label": "Quiz",
-         "content-type": "assesment",
-         "source": "dfs-traversal-quiz.json",
-         "target": "dfs-traversal-quiz.html"
-       }
+          "unit-type": "task",
+          "label": "Quiz",
+          "content-type": "assesment",
+          "source": "dfs-traversal-quiz.json",
+          "target": "dfs-traversal-quiz.html"
+        }
       ]
     },
-        {
+    {
       "unit-type": "lu",
       "label": "Reconstructing Binary Tree",
       "basedir": "reconstructing-binary-tree",
@@ -115,7 +113,7 @@
         {
           "unit-type": "aim"
         },
-	
+
         {
           "unit-type": "task",
           "label": "From Inorder and Postorder",
@@ -123,7 +121,7 @@
           "source": "from-inorder-and-postorder.md",
           "target": "from-inorder-and-postorder.html"
         },
-        
+
         {
           "unit-type": "task",
           "label": "From Inorder and Preorder",
@@ -131,7 +129,7 @@
           "source": "from-inorder-and-preorder.md",
           "target": "from-inorder-and-preorder.html"
         },
-	
+
         {
           "unit-type": "task",
           "label": "Quiz",
@@ -149,7 +147,7 @@
         {
           "unit-type": "aim"
         },
-	
+
         {
           "unit-type": "task",
           "label": "Concept",
@@ -157,7 +155,7 @@
           "source": "breadth-first-traversal-theory.md",
           "target": "breadth-first-traversal-theory.html"
         },
-        
+
         {
           "unit-type": "task",
           "label": "Demo",
@@ -165,14 +163,14 @@
           "source": "simulation/bft.html",
           "target": "dft.html"
         },
-	{
+        {
           "unit-type": "task",
           "label": "Practice",
           "content-type": "simulation",
           "source": "simulation/bft-practice.html",
           "target": "bft-practice.html"
         },
-	{
+        {
           "unit-type": "task",
           "label": "Exercise",
           "content-type": "simulation",
@@ -180,15 +178,15 @@
           "target": "bft-exercise.html"
         },
         {
-         "unit-type": "task",
-         "label": "Quiz",
-         "content-type": "assesment",
-         "source": "breadth-first-traversal-quiz.json",
-         "target": "breadth-first-traversal-quiz.html"
-       }
+          "unit-type": "task",
+          "label": "Quiz",
+          "content-type": "assesment",
+          "source": "breadth-first-traversal-quiz.json",
+          "target": "breadth-first-traversal-quiz.html"
+        }
       ]
     },
-    
+
     {
       "unit-type": "task",
       "label": "Posttest",
@@ -196,7 +194,7 @@
       "source": "posttest.json",
       "target": "posttest.html"
     },
-       
+
     {
       "unit-type": "task",
       "label": "Further Readings/References",
